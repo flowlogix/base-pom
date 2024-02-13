@@ -10,7 +10,7 @@
     <version>1.x-SNAPSHOT</version>
 
     <name>Base POM</name>
-    <description>Base POM to be used as parent POM</description>
+    <description>Minimal base POM to be used as parent POM</description>
 <!--    <inceptionYear>2011</inceptionYear>-->
 
 <!--    <url>https://github.com/flowlogix/flowlogix</url>-->
