@@ -40,8 +40,11 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <project.build.outputTimestamp>2023-09-20T00:03:03Z</project.build.outputTimestamp>
     </properties>
+
+    <modules>
+        <module>infra-pom</module>
+    </modules>
 
     <build>
         <pluginManagement>
