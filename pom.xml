@@ -33,7 +33,7 @@
     <scm>
         <url>https://github.com/flowlogix/base-pom/tree/main</url>
         <connection>scm:git:git://github.com/flowlogix/base-pom.git</connection>
-        <developerConnection>scm:git:ssh://github.com:flowlogix/base-pom.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:flowlogix/base-pom.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
