@@ -57,6 +57,7 @@
         <javadoc.snippet.path.options>--snippet-path ${javadoc.snippet.path}</javadoc.snippet.path.options>
         <checkstyle.configLocation>checkstyle.xml</checkstyle.configLocation>
         <checkstyle.headerLocation>header.txt</checkstyle.headerLocation>
+        <checkstyle.supressionsLocation/>
         <checkstyle.excludes>**/module-info.java</checkstyle.excludes>
 
         <jakarta.ee.version>10.0.0</jakarta.ee.version>
@@ -135,6 +136,7 @@
                 <configuration>
                     <configLocation>${checkstyle.configLocation}</configLocation>
                     <headerLocation>${checkstyle.headerLocation}</headerLocation>
+                    <suppressionsLocation>${checkstyle.supressionsLocation}</suppressionsLocation>
                     <linkXRef>true</linkXRef>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
