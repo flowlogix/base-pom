@@ -40,6 +40,7 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <jar.skip-if-empty>false</jar.skip-if-empty>
     </properties>
 
     <modules>
@@ -110,6 +111,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.3.0</version>
+                    <configuration>
+                        <skipIfEmpty>${jar.skip-if-empty}</skipIfEmpty>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
