@@ -43,6 +43,7 @@
         <compiler.show.warnings>true</compiler.show.warnings>
         <compiler.deprecation.arg>-Xlint:deprecation</compiler.deprecation.arg>
         <compiler.unchecked.arg>-Xlint:unchecked</compiler.unchecked.arg>
+        <compiler.parameters.arg>-parameters</compiler.parameters.arg>
         <compiler.annotation.processing>full</compiler.annotation.processing>
         <test.parallel>all</test.parallel>
         <test.thread.count>10</test.thread.count>
@@ -188,6 +189,7 @@
                         <compilerArgs combine.children="append">
                             <arg>${compiler.deprecation.arg}</arg>
                             <arg>${compiler.unchecked.arg}</arg>
+                            <arg>${compiler.parameters.arg}</arg>
                         </compilerArgs>
                         <proc>${compiler.annotation.processing}</proc>
                     </configuration>
