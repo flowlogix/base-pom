@@ -57,7 +57,7 @@
         <javadoc.snippet.path>${snippet.path}</javadoc.snippet.path>
         <javadoc.snippet.path.options>--snippet-path ${javadoc.snippet.path}</javadoc.snippet.path.options>
         <checkstyle.configLocation>checkstyle.xml</checkstyle.configLocation>
-        <checkstyle.headerLocation>header.txt</checkstyle.headerLocation>
+        <checkstyle.headerLocation>flowlogix-header.txt</checkstyle.headerLocation>
         <checkstyle.supressionsLocation/>
         <checkstyle.excludes>**/module-info.java</checkstyle.excludes>
 
