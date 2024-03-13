@@ -90,10 +90,11 @@
                             <goal>enforce</goal>
                         </goals>
                         <configuration>
-                            <rules>
+                            <rules combine.children="append">
                                 <requireMavenVersion>
                                     <version>3.6</version>
                                 </requireMavenVersion>
+                                <dependencyConvergence/>
                             </rules>
                         </configuration>
                     </execution>
