@@ -40,23 +40,21 @@
                             <goal>unpack</goal>
                         </goals>
                         <configuration>
+                            <outputDirectory>${dependencies.output-directory}</outputDirectory>
+                            <markersDirectory>${dependencies.markers-directory}</markersDirectory>
+                            <overWriteIfNewer>false</overWriteIfNewer>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>fish.payara.distributions</groupId>
+                                    <artifactId>payara</artifactId>
+                                    <version>${payara.version}</version>
+                                    <type>zip</type>
+                                </artifactItem>
+                            </artifactItems>
                             <skip>${payara.start.skip}</skip>
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <outputDirectory>${dependencies.output-directory}</outputDirectory>
-                    <markersDirectory>${dependencies.markers-directory}</markersDirectory>
-                    <overWriteIfNewer>false</overWriteIfNewer>
-                    <artifactItems>
-                        <artifactItem>
-                            <groupId>fish.payara.distributions</groupId>
-                            <artifactId>payara</artifactId>
-                            <version>${payara.version}</version>
-                            <type>zip</type>
-                        </artifactItem>
-                    </artifactItems>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
