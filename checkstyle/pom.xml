@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>checkstyle</artifactId>
-    <version>x-SNAPSHOT</version>
+    <version>8-M2</version>
 
     <parent>
         <groupId>com.flowlogix</groupId>
         <artifactId>base-pom</artifactId>
-        <version>x-SNAPSHOT</version>
+        <version>8-M2</version>
     </parent>
 
     <name>Checkstyle Dependencies</name>
 
     <properties>
-        <project.build.outputTimestamp>2023-09-20T00:03:03Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2024-03-14T15:22:31Z</project.build.outputTimestamp>
     </properties>
 </project>
