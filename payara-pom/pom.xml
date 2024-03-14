@@ -22,7 +22,7 @@
     <properties>
         <payara.start.disable>${skipITs}</payara.start.disable>
         <payara.start.skip>${payara.start.disable}</payara.start.skip>
-        <payara.version>6.2024.2</payara.version>
+        <payara.version>6.2024.3</payara.version>
         <arquillian.payara.version>3.0.alpha8</arquillian.payara.version>
         <root.basedir>${basedir}</root.basedir>
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
