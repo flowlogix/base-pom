@@ -11,7 +11,7 @@
     <parent>
         <groupId>com.flowlogix</groupId>
         <artifactId>infra-pom</artifactId>
-        <version>x-SNAPSHOT</version>
+        <version>10</version>
         <relativePath>../infra-pom</relativePath>
     </parent>
 
