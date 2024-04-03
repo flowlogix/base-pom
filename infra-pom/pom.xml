@@ -61,6 +61,7 @@
         <checkstyle.supressionsLocation/>
         <checkstyle.excludes>**/module-info.java</checkstyle.excludes>
 
+        <maven.minimum.version>3.6</maven.minimum.version>
         <jakarta.ee.version>10.0.0</jakarta.ee.version>
         <lombok.version>1.18.32</lombok.version>
         <shrinkwrap.api.version>1.2.6</shrinkwrap.api.version>
@@ -91,8 +92,12 @@
                         <configuration>
                             <rules combine.children="append">
                                 <requireMavenVersion>
-                                    <version>3.6</version>
+                                    <version>${maven.minimum.version}</version>
                                 </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>${maven.compiler.release}</version>
+                                    <message>Required JDK version to build is at least ${maven.compiler.release}</message>
+                                </requireJavaVersion>
                                 <dependencyConvergence/>
                             </rules>
                         </configuration>
