@@ -44,7 +44,7 @@
         <compiler.deprecation.arg>-Xlint:deprecation</compiler.deprecation.arg>
         <compiler.unchecked.arg>-Xlint:unchecked</compiler.unchecked.arg>
         <compiler.parameters.arg>-parameters</compiler.parameters.arg>
-        <compiler.annotation.processing>full</compiler.annotation.processing>
+        <compiler.annotation.processing>only</compiler.annotation.processing>
         <test.parallel>all</test.parallel>
         <test.thread.count>10</test.thread.count>
         <test.run.order>random</test.run.order>
@@ -96,7 +96,7 @@
                                     <version>${maven.minimum.version}</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>{jdk.minimum.version}</version>
+                                    <version>${jdk.minimum.version}</version>
                                     <message>Required JDK version to build is at least ${maven.compiler.release}</message>
                                 </requireJavaVersion>
                                 <dependencyConvergence/>
@@ -386,6 +386,15 @@
     </reporting>
 
     <profiles>
+        <profile>
+            <id>annotation-processing-full</id>
+            <activation>
+                <jdk>[21,)</jdk>
+            </activation>
+            <properties>
+                <compiler.annotation.processing>full</compiler.annotation.processing>
+            </properties>
+        </profile>
         <profile>
             <id>release-flowlogix-to-central</id>
             <build>
