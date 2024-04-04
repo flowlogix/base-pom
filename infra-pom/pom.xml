@@ -44,7 +44,7 @@
         <compiler.deprecation.arg>-Xlint:deprecation</compiler.deprecation.arg>
         <compiler.unchecked.arg>-Xlint:unchecked</compiler.unchecked.arg>
         <compiler.parameters.arg>-parameters</compiler.parameters.arg>
-        <compiler.annotation.processing>only</compiler.annotation.processing>
+        <compiler.annotation.processing/>
         <test.parallel>all</test.parallel>
         <test.thread.count>10</test.thread.count>
         <test.run.order>random</test.run.order>
