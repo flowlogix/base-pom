@@ -26,6 +26,7 @@
         <root.basedir>${basedir}</root.basedir>
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
+        <payara.imageName/>
     </properties>
 
     <build>
@@ -96,6 +97,14 @@
                     <configuration>
                         <executable>${root.basedir}/target/dependency/payara6/bin/asadmin</executable>
                         <skip>${payara.start.skip}</skip>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <configuration>
+                        <systemPropertyVariables>
+                            <payara.imageName>${payara.imageName}</payara.imageName>
+                        </systemPropertyVariables>
                     </configuration>
                 </plugin>
             </plugins>
