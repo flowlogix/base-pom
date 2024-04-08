@@ -110,6 +110,13 @@
                 <artifactId>payara-micro</artifactId>
                 <version>${payara.version}</version>
             </dependency>
+            <!-- Payara Java EE Arquillian Container support (container) -->
+            <dependency>
+                <groupId>fish.payara.arquillian</groupId>
+                <artifactId>arquillian-payara-server-remote</artifactId>
+                <version>${arquillian.payara.version}</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
