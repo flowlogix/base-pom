@@ -27,6 +27,7 @@
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
         <payara.imageName/>
+        <testcontainers.skip>false</testcontainers.skip>
     </properties>
 
     <build>
@@ -104,6 +105,7 @@
                     <configuration>
                         <systemPropertyVariables>
                             <payara.imageName>${payara.imageName}</payara.imageName>
+                            <testcontainers.skip>${testcontainers.skip}</testcontainers.skip>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>
@@ -126,12 +128,14 @@
             <id>payara-server-remote</id>
             <properties>
                 <payara.start.skip>true</payara.start.skip>
+                <testcontainers.skip>true</testcontainers.skip>
             </properties>
         </profile>
         <profile>
             <id>payara-k8s</id>
             <properties>
                 <payara.start.skip>true</payara.start.skip>
+                <testcontainers.skip>true</testcontainers.skip>
                 <arquillian.launch>payara-docker</arquillian.launch>
             </properties>
             <build>
