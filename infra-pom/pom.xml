@@ -33,6 +33,7 @@
         <nexus.url>https://s01.oss.sonatype.org</nexus.url>
         <jboss.unzip.url>https://repository.jboss.org/nexus/content/repositories/unzip/org/jboss</jboss.unzip.url>
         <central.archive.url>https://oss.sonatype.org/service/local/repositories/releases/archive</central.archive.url>
+        <arquillian.launch/>
         <webdriver.browser>chromeheadless</webdriver.browser>
         <jacocoAddress>localhost</jacocoAddress>
         <jacocoPort>52212</jacocoPort>
@@ -86,7 +87,7 @@
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>enforce-maven</id>
+                        <id>enforce-maven-java</id>
                         <goals>
                             <goal>enforce</goal>
                         </goals>
@@ -100,6 +101,22 @@
                                     <message>Required JDK version to build is at least ${maven.compiler.release}</message>
                                 </requireJavaVersion>
                                 <dependencyConvergence/>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>enforce-maven-ban-junit4</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>junit:junit</exclude>
+                                    </excludes>
+                                    <message>JUnit 4 is prohibited</message>
+                                </bannedDependencies>
                             </rules>
                         </configuration>
                     </execution>
@@ -228,6 +245,7 @@
                         <redirectTestOutputToFile>${test.redirect.to.file}</redirectTestOutputToFile>
                         <argLine>@{jacocoAgent} @{jdk11FailsafeOptions}</argLine>
                         <systemPropertyVariables combine.children="append">
+                            <arquillian.launch>${arquillian.launch}</arquillian.launch>
                             <webdriver.browser>${webdriver.browser}</webdriver.browser>
                         </systemPropertyVariables>
                     </configuration>
