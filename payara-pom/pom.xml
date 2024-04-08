@@ -23,7 +23,6 @@
         <payara.start.disable>${skipITs}</payara.start.disable>
         <payara.start.skip>${payara.start.disable}</payara.start.skip>
         <payara.version>6.2024.3</payara.version>
-        <arquillian.payara.version>3.0.alpha8</arquillian.payara.version>
         <root.basedir>${basedir}</root.basedir>
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
@@ -109,13 +108,6 @@
                 <groupId>fish.payara.extras</groupId>
                 <artifactId>payara-micro</artifactId>
                 <version>${payara.version}</version>
-            </dependency>
-            <!-- Payara Java EE Arquillian Container support (container) -->
-            <dependency>
-                <groupId>fish.payara.arquillian</groupId>
-                <artifactId>arquillian-payara-server-remote</artifactId>
-                <version>${arquillian.payara.version}</version>
-                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
