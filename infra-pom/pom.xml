@@ -89,7 +89,6 @@
                 <groupId>org.jboss.shrinkwrap</groupId>
                 <artifactId>shrinkwrap-api</artifactId>
                 <version>${shrinkwrap.api.version}</version>
-                <scope>test</scope>
                 <optional>true</optional>
             </dependency>
         </dependencies>
