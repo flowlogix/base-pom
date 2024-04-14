@@ -47,6 +47,7 @@
         <compiler.parameters.arg>-parameters</compiler.parameters.arg>
         <compiler.annotation.processing/>
         <test.parallel>all</test.parallel>
+        <it.test.parallel>${test.parallel}</it.test.parallel>
         <test.thread.count>10</test.thread.count>
         <test.run.order>random</test.run.order>
         <test.redirect.to.file>true</test.redirect.to.file>
@@ -253,7 +254,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <parallel>${test.parallel}</parallel>
+                        <parallel>${it.test.parallel}</parallel>
                         <threadCount>${test.thread.count}</threadCount>
                         <runOrder>${test.run.order}</runOrder>
                         <redirectTestOutputToFile>${test.redirect.to.file}</redirectTestOutputToFile>
