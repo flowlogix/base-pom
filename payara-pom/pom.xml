@@ -27,6 +27,8 @@
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
         <payara.imageName/>
+        <payara.http.port>80</payara.http.port>
+        <payara.https.port>443</payara.https.port>
         <testcontainers.skip>false</testcontainers.skip>
     </properties>
 
@@ -125,14 +127,14 @@
 
     <profiles>
         <profile>
-            <id>payara-server-remote</id>
+            <id>payara-server-local</id>
             <properties>
                 <payara.start.skip>true</payara.start.skip>
                 <testcontainers.skip>true</testcontainers.skip>
             </properties>
         </profile>
         <profile>
-            <id>payara-k8s</id>
+            <id>payara-server-remote</id>
             <properties>
                 <payara.start.skip>true</payara.start.skip>
                 <testcontainers.skip>true</testcontainers.skip>
@@ -144,8 +146,8 @@
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
                             <systemPropertyVariables>
-                                <httpPort>80</httpPort>
-                                <httpsPort>443</httpsPort>
+                                <httpPort>${payara.http.port}</httpPort>
+                                <httpsPort>${payara.https.port}</httpsPort>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
