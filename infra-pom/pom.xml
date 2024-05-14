@@ -46,7 +46,7 @@
         <compiler.unchecked.arg>-Xlint:unchecked</compiler.unchecked.arg>
         <compiler.parameters.arg>-parameters</compiler.parameters.arg>
         <compiler.annotation.processing/>
-        <test.parallel>all</test.parallel>
+        <test.parallel>classes</test.parallel>
         <it.test.parallel>${test.parallel}</it.test.parallel>
         <test.thread.count>10</test.thread.count>
         <test.run.order>random</test.run.order>
