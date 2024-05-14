@@ -240,6 +240,12 @@
                         <runOrder>${test.run.order}</runOrder>
                         <redirectTestOutputToFile>${test.redirect.to.file}</redirectTestOutputToFile>
                         <argLine>@{jacocoAgent} @{jdk11SurefireOptions}</argLine>
+                        <properties>
+                            <configurationParameters>
+                                junit.jupiter.execution.parallel.enabled = true
+                                junit.jupiter.execution.parallel.mode.default = concurrent
+                            </configurationParameters>
+                        </properties>
                     </configuration>
                 </plugin>
                 <plugin>
