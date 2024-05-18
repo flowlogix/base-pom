@@ -292,7 +292,7 @@
                         <links combine.children="append">
                             <link>https://jakarta.ee/specifications/platform/${jakarta.ee.parsed.majorVersion}/apidocs</link>
                             <link>${jboss.unzip.url}/shrinkwrap/shrinkwrap-api/${shrinkwrap.api.version}/shrinkwrap-api-${shrinkwrap.api.version}-javadoc.jar-unzip</link>
-                            <link>https://javadoc.io/doc/org.projectlombok/lombok/${lombok.version}</link>
+                            <link>${central.archive.url}/org/projectlombok/lombok/${lombok.version}/lombok-${lombok.version}-javadoc.jar/!</link>
                         </links>
                         <notimestamp>true</notimestamp>
                     </configuration>
