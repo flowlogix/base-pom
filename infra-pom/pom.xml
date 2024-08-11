@@ -338,12 +338,6 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <configuration>
-                        <skipIfEmpty>${jar.skip-if-empty}</skipIfEmpty>
-                    </configuration>
-                </plugin>
-                <plugin>
                     <artifactId>maven-release-plugin</artifactId>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
