@@ -371,13 +371,8 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>org.simplify4u.plugins</groupId>
-                    <artifactId>sign-maven-plugin</artifactId>
-                    <version>1.1.0</version>
-                    <configuration>
-                        <serverId>${gpg.keyname}</serverId>
-                        <skipNoKey>false</skipNoKey>
-                    </configuration>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>3.2.5</version>
                     <executions>
                         <execution>
                             <id>sign-artifacts</id>
@@ -453,8 +448,7 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.simplify4u.plugins</groupId>
-                        <artifactId>sign-maven-plugin</artifactId>
+                        <artifactId>maven-gpg-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>org.cyclonedx</groupId>
@@ -478,8 +472,7 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.simplify4u.plugins</groupId>
-                        <artifactId>sign-maven-plugin</artifactId>
+                        <artifactId>maven-gpg-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>org.cyclonedx</groupId>
