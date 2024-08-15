@@ -53,6 +53,7 @@
         <test.redirect.to.file>true</test.redirect.to.file>
         <deploy.at-end>true</deploy.at-end>
         <jar.skip-if-empty>true</jar.skip-if-empty>
+        <japicmp.skip>true</japicmp.skip>
         <javadoc.doclint>all,-reference</javadoc.doclint>
         <javadoc.sourcepath>${project.build.sourceDirectory}
             :${project.build.directory}/generated-sources/annotations</javadoc.sourcepath>
