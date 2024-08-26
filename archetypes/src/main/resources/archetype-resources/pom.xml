@@ -6,7 +6,7 @@
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
 
-    <name>${artifactId}</name>
+    <name>${projectName}</name>
 
     <parent>
         <groupId>com.flowlogix</groupId>
