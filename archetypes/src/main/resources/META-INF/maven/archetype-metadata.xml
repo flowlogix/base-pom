@@ -1,8 +1,11 @@
 <archetype-descriptor
         xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
-        name="base">
+        name="starter">
     <requiredProperties>
+        <requiredProperty key="baseType">
+            <validationRegex>base|infra|payara</validationRegex>
+        </requiredProperty>
         <requiredProperty key="version">
             <defaultValue>1.x-SNAPSHOT</defaultValue>
         </requiredProperty>

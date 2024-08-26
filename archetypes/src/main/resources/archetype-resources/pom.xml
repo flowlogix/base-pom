@@ -10,7 +10,7 @@
 
     <parent>
         <groupId>com.flowlogix</groupId>
-        <artifactId>base-pom</artifactId>
+        <artifactId>${baseType}-pom</artifactId>
         <version>25</version>
     </parent>
 </project>

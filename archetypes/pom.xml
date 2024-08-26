@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.flowlogix.archetypes</groupId>
-    <artifactId>base</artifactId>
+    <artifactId>starter</artifactId>
     <packaging>maven-archetype</packaging>
 
     <properties>
