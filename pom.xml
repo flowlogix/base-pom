@@ -47,6 +47,7 @@
         <module>checkstyle</module>
         <module>infra-pom</module>
         <module>payara-pom</module>
+        <module>archetypes</module>
     </modules>
 
     <build>
