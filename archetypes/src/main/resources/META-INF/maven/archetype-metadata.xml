@@ -4,7 +4,7 @@
         name="starter">
     <requiredProperties>
         <requiredProperty key="baseType">
-            <validationRegex>base|infra|payara</validationRegex>
+            <validationRegex>infra|payara</validationRegex>
         </requiredProperty>
         <requiredProperty key="version">
             <defaultValue>1.x-SNAPSHOT</defaultValue>
@@ -16,9 +16,27 @@
     <fileSets>
         <fileSet filtered="true" packaged="true">
             <directory>src/main/java</directory>
+            <includes>
+                <include>*</include>
+            </includes>
         </fileSet>
-        <fileSet>
+        <fileSet filtered="true" packaged="true">
             <directory>src/test/java</directory>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+        <fileSet packaged="false">
+            <directory>src/test/resources</directory>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+        <fileSet packaged="false">
+            <directory>src/checkstyle</directory>
+            <includes>
+                <include>*</include>
+            </includes>
         </fileSet>
         <fileSet>
             <directory>.mvn</directory>

@@ -1,0 +1,10 @@
+<!DOCTYPE suppressions PUBLIC
+        "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+        "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+
+<!-- See https://github.com/hazelcast/hazelcast/blob/master/checkstyle/suppressions.xml for examples -->
+<suppressions>
+    <!-- do not require package-info.java -->
+    <suppress checks="JavadocPackage" files=".*.java$"/>
+    <suppress checks="Header" files=".*.java$"/>
+</suppressions>
