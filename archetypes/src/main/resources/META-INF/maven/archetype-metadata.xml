@@ -29,5 +29,11 @@
                 <include>.gitignore</include>
             </includes>
         </fileSet>
+        <fileSet>
+            <directory>.github</directory>
+            <includes>
+                <include>*.yml</include>
+            </includes>
+        </fileSet>
     </fileSets>
 </archetype-descriptor>
