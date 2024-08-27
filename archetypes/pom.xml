@@ -30,6 +30,9 @@
                 <plugin>
                     <artifactId>maven-archetype-plugin</artifactId>
                     <version>${archetype.plugin.version}</version>
+                    <configuration>
+                        <useDefaultExcludes>false</useDefaultExcludes>
+                    </configuration>
                     <executions>
                         <execution>
                             <id>default-integration-test</id>

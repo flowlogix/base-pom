@@ -20,5 +20,14 @@
         <fileSet>
             <directory>src/test/java</directory>
         </fileSet>
+        <fileSet>
+            <directory>.mvn</directory>
+        </fileSet>
+        <fileSet>
+            <directory></directory>
+            <includes>
+                <include>.gitignore</include>
+            </includes>
+        </fileSet>
     </fileSets>
 </archetype-descriptor>
