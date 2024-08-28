@@ -15,8 +15,9 @@
     </parent>
 
     <properties>
-        <arquillian.payara.version>3.1</arquillian.payara.version>
         <flowlogix.depchain.version>20</flowlogix.depchain.version>
+        <arquillian.graphene.version>3.0.0-alpha.4</arquillian.graphene.version>
+        <arquillian.payara.version>3.1</arquillian.payara.version>
         <checkstyle.supressionsLocation>${basedir}/src/checkstyle/suppressions.xml</checkstyle.supressionsLocation>
         <checkstyle.headerLocation>${basedir}/src/checkstyle/apache-header.txt</checkstyle.headerLocation>
         <test.redirect.to.file>false</test.redirect.to.file>
@@ -43,6 +44,13 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.jboss.arquillian.graphene</groupId>
+            <artifactId>graphene-webdriver</artifactId>
+            <version>${arquillian.graphene.version}</version>
+            <scope>test</scope>
+            <type>pom</type>
+        </dependency>
+        <dependency>
             <groupId>fish.payara.arquillian</groupId>
             <artifactId>arquillian-payara-server-remote</artifactId>
             <version>${arquillian.payara.version}</version>
@@ -52,6 +60,12 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-jdk14</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+            <version>4.0.4</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

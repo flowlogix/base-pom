@@ -21,6 +21,12 @@
             </includes>
         </fileSet>
         <fileSet>
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
             <directory>src/main/webapp</directory>
             <includes>
                 <include>**/*</include>
