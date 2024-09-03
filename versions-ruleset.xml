@@ -8,6 +8,8 @@
         <ignoreVersion type="regex">.*alpha.*</ignoreVersion>
         <ignoreVersion type="regex">.*-lp.*</ignoreVersion>
         <ignoreVersion type="regex">.*-B[0-9]+.*</ignoreVersion>
+        <ignoreVersion type="regex">.*-M[0-9]+.*</ignoreVersion>
+        <ignoreVersion type="regex">.*-T[0-9]+.*</ignoreVersion>
         <ignoreVersion type="regex">.*-RC.*</ignoreVersion>
     </ignoreVersions>
 </ruleset>
