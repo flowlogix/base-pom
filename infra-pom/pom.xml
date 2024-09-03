@@ -76,6 +76,9 @@
             <id>${staging.server}</id>
             <url>${nexus.url}/content/repositories/snapshots/</url>
         </snapshotRepository>
+        <site>
+            <url>${url}</url>
+        </site>
     </distributionManagement>
 
     <dependencyManagement>
