@@ -77,7 +77,7 @@
             <url>${nexus.url}/content/repositories/snapshots/</url>
         </snapshotRepository>
         <site>
-            <url>${url}</url>
+            <url>${project.url}</url>
         </site>
     </distributionManagement>
 
