@@ -138,7 +138,7 @@
             <properties>
                 <payara.start.skip>true</payara.start.skip>
                 <testcontainers.skip>true</testcontainers.skip>
-                <arquillian.launch>payara-docker</arquillian.launch>
+                <arquillian.container>payara-docker</arquillian.container>
             </properties>
             <build>
                 <plugins>
@@ -158,7 +158,7 @@
             <id>payara-docker</id>
             <properties>
                 <payara.start.skip>true</payara.start.skip>
-                <arquillian.launch>payara-docker</arquillian.launch>
+                <arquillian.container>payara-docker</arquillian.container>
             </properties>
         </profile>
     </profiles>

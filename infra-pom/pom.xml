@@ -33,7 +33,7 @@
         <nexus.url>https://s01.oss.sonatype.org</nexus.url>
         <jboss.unzip.url>https://repository.jboss.org/nexus/content/repositories/unzip/org/jboss</jboss.unzip.url>
         <central.archive.url>https://oss.sonatype.org/service/local/repositories/releases/archive</central.archive.url>
-        <arquillian.launch/>
+        <arquillian.container/>
         <drone.browser>chromeheadless</drone.browser>
         <jacocoAddress>localhost</jacocoAddress>
         <jacocoPort>52212</jacocoPort>
@@ -290,7 +290,7 @@
                         <redirectTestOutputToFile>${test.redirect.to.file}</redirectTestOutputToFile>
                         <argLine>@{jacocoAgent} @{jdk11FailsafeOptions}</argLine>
                         <systemPropertyVariables combine.children="append">
-                            <arquillian.launch>${arquillian.launch}</arquillian.launch>
+                            <arquillian.launch>${arquillian.container}</arquillian.launch>
                             <webdriver.browser>${drone.browser}</webdriver.browser>
                         </systemPropertyVariables>
                     </configuration>
