@@ -106,8 +106,8 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <configuration>
                         <systemPropertyVariables>
-                            <payara.imageName>${payara.imageName}</payara.imageName>
-                            <testcontainers.skip>${testcontainers.skip}</testcontainers.skip>
+                            <payara.image.name>${payara.imageName}</payara.image.name>
+                            <test.containers.skip>${testcontainers.skip}</test.containers.skip>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>
