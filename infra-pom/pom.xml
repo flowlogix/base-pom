@@ -48,6 +48,7 @@
         <compiler.annotation.processing/>
         <test.parallel>classes</test.parallel>
         <it.test.parallel>${test.parallel}</it.test.parallel>
+        <shrinkwrap.compile.skip>true</shrinkwrap.compile.skip>
         <test.thread.count>10</test.thread.count>
         <test.run.order>random</test.run.order>
         <test.redirect.to.file>true</test.redirect.to.file>
@@ -292,6 +293,7 @@
                         <systemPropertyVariables combine.children="append">
                             <arquillian.launch>${arquillian.container}</arquillian.launch>
                             <webdriver.browser>${drone.browser}</webdriver.browser>
+                            <org.jboss.shrinkwrap.resolver.maven.skipCompilation>${shrinkwrap.compile.skip}</org.jboss.shrinkwrap.resolver.maven.skipCompilation>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>
