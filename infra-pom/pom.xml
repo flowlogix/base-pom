@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
     <artifactId>infra-pom</artifactId>
-    <version>x-SNAPSHOT</version>
+    <version>31</version>
 
     <parent>
         <groupId>com.flowlogix</groupId>
         <artifactId>base-pom</artifactId>
-        <version>x-SNAPSHOT</version>
+        <version>31</version>
     </parent>
 
     <name>Infrastructure POM</name>
@@ -19,7 +17,7 @@
     <url>https://github.com/flowlogix/base-pom</url>
 
     <properties>
-        <project.build.outputTimestamp>2023-09-20T00:03:03Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2024-09-23T00:55:44Z</project.build.outputTimestamp>
         <docs.phase>deploy</docs.phase>
         <delombok.phase>none</delombok.phase>
         <snippet.path.p1>${project.build.sourceDirectory}</snippet.path.p1>
@@ -32,19 +30,19 @@
         <staging.server>flowlogix-maven-central-s01</staging.server>
         <nexus.url>https://s01.oss.sonatype.org</nexus.url>
         <central.archive.url>https://oss.sonatype.org/service/local/repositories/releases/archive</central.archive.url>
-        <arquillian.container/>
+        <arquillian.container />
         <drone.browser>chromeheadless</drone.browser>
         <jacocoAddress>localhost</jacocoAddress>
         <jacocoPort>52212</jacocoPort>
         <jacocoReset>true</jacocoReset>
-        <jacocoAgent/>
+        <jacocoAgent />
         <jdk11SurefireOptions>-Xshare:off</jdk11SurefireOptions>
-        <jdk11FailsafeOptions/>
+        <jdk11FailsafeOptions />
         <compiler.show.warnings>true</compiler.show.warnings>
         <compiler.deprecation.arg>-Xlint:deprecation</compiler.deprecation.arg>
         <compiler.unchecked.arg>-Xlint:unchecked</compiler.unchecked.arg>
         <compiler.parameters.arg>-parameters</compiler.parameters.arg>
-        <compiler.annotation.processing/>
+        <compiler.annotation.processing />
         <test.parallel>classes</test.parallel>
         <it.test.parallel>${test.parallel}</it.test.parallel>
         <shrinkwrap.compile.skip>true</shrinkwrap.compile.skip>
@@ -61,7 +59,7 @@
         <javadoc.snippet.path.options>--snippet-path ${javadoc.snippet.path}</javadoc.snippet.path.options>
         <checkstyle.configLocation>checkstyle.xml</checkstyle.configLocation>
         <checkstyle.headerLocation>flowlogix-header.txt</checkstyle.headerLocation>
-        <checkstyle.supressionsLocation/>
+        <checkstyle.supressionsLocation />
         <checkstyle.excludes>**/module-info.java</checkstyle.excludes>
 
         <jdk.minimum.version>${maven.compiler.release}</jdk.minimum.version>
@@ -127,7 +125,7 @@
                                     <version>${jdk.minimum.version}</version>
                                     <message>Required JDK version to build is at least ${maven.compiler.release}</message>
                                 </requireJavaVersion>
-                                <dependencyConvergence/>
+                                <dependencyConvergence />
                             </rules>
                         </configuration>
                     </execution>
@@ -213,7 +211,7 @@
                     <dependency>
                         <groupId>com.flowlogix</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>x-SNAPSHOT</version>
+                        <version>31</version>
                     </dependency>
                 </dependencies>
             </plugin>
