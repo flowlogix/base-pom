@@ -30,7 +30,7 @@
         <payara.asadmin.executable>${root.basedir}/target/dependency/payara6/bin/asadmin</payara.asadmin.executable>
         <payara.http.port>80</payara.http.port>
         <payara.https.port>443</payara.https.port>
-        <testcontainers.skip>false</testcontainers.skip>
+        <testcontainers.skip>true</testcontainers.skip>
     </properties>
 
     <build>
@@ -160,6 +160,7 @@
             <properties>
                 <payara.start.skip>true</payara.start.skip>
                 <arquillian.container>payara-docker</arquillian.container>
+                <testcontainers.skip>false</testcontainers.skip>
             </properties>
         </profile>
     </profiles>
