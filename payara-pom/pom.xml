@@ -27,6 +27,7 @@
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
         <payara.imageName/>
+        <payara.asadmin.executable>${root.basedir}/target/dependency/payara6/bin/asadmin</payara.asadmin.executable>
         <payara.http.port>80</payara.http.port>
         <payara.https.port>443</payara.https.port>
         <testcontainers.skip>false</testcontainers.skip>
@@ -67,6 +68,8 @@
                         <id>start-domain</id>
                         <phase>pre-integration-test</phase>
                         <configuration>
+                            <executable>${payara.asadmin.executable}</executable>
+                            <skip>${payara.start.skip}</skip>
                             <arguments>
                                 <argument>start-domain</argument>
                             </arguments>
@@ -79,6 +82,8 @@
                         <id>stop-domain</id>
                         <phase>post-integration-test</phase>
                         <configuration>
+                            <executable>${payara.asadmin.executable}</executable>
+                            <skip>${payara.start.skip}</skip>
                             <arguments>
                                 <argument>stop-domain</argument>
                             </arguments>
@@ -97,10 +102,6 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>3.4.1</version>
-                    <configuration>
-                        <executable>${root.basedir}/target/dependency/payara6/bin/asadmin</executable>
-                        <skip>${payara.start.skip}</skip>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-failsafe-plugin</artifactId>
