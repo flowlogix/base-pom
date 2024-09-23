@@ -31,7 +31,6 @@
         <gpg.keyname>Flow Logix, Inc.</gpg.keyname>
         <staging.server>flowlogix-maven-central-s01</staging.server>
         <nexus.url>https://s01.oss.sonatype.org</nexus.url>
-        <jboss.unzip.url>https://repository.jboss.org/nexus/content/repositories/unzip/org/jboss</jboss.unzip.url>
         <central.archive.url>https://oss.sonatype.org/service/local/repositories/releases/archive</central.archive.url>
         <arquillian.container/>
         <drone.browser>chromeheadless</drone.browser>
@@ -325,7 +324,6 @@
                         <additionalOptions>${javadoc.snippet.path.options}</additionalOptions>
                         <links combine.children="append">
                             <link>https://jakarta.ee/specifications/platform/${jakarta.ee.parsed.majorVersion}/apidocs</link>
-                            <link>${jboss.unzip.url}/shrinkwrap/shrinkwrap-api/${shrinkwrap.api.version}/shrinkwrap-api-${shrinkwrap.api.version}-javadoc.jar-unzip</link>
                             <link>${central.archive.url}/org/projectlombok/lombok/${lombok.version}/lombok-${lombok.version}-javadoc.jar/!</link>
                         </links>
                         <notimestamp>true</notimestamp>
