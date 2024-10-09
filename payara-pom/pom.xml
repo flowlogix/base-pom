@@ -29,7 +29,7 @@
         <payara.imageName/>
         <payara.asadmin.executable>${root.basedir}/target/dependency/payara6/bin/asadmin</payara.asadmin.executable>
         <payara.http.port>80</payara.http.port>
-        <payara.https.port>443</payara.https.port>
+        <payara.https.port>8181</payara.https.port>
         <testcontainers.skip>true</testcontainers.skip>
     </properties>
 
@@ -109,6 +109,7 @@
                         <systemPropertyVariables>
                             <payara.image.name>${payara.imageName}</payara.image.name>
                             <test.containers.skip>${testcontainers.skip}</test.containers.skip>
+                            <httpsPort>${payara.https.port}</httpsPort>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>
@@ -140,6 +141,7 @@
                 <payara.start.skip>true</payara.start.skip>
                 <testcontainers.skip>true</testcontainers.skip>
                 <arquillian.container>payara-docker</arquillian.container>
+                <payara.https.port>443</payara.https.port>
             </properties>
             <build>
                 <plugins>
@@ -148,7 +150,6 @@
                         <configuration>
                             <systemPropertyVariables>
                                 <httpPort>${payara.http.port}</httpPort>
-                                <httpsPort>${payara.https.port}</httpsPort>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
