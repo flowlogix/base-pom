@@ -70,7 +70,7 @@
         <lombok.version>1.18.34</lombok.version>
         <lombok.javadoc.version>${lombok.version}</lombok.javadoc.version>
         <shrinkwrap.api.version>1.2.6</shrinkwrap.api.version>
-        <shrinkwrap.resolver.version>3.3.1</shrinkwrap.resolver.version>
+        <shrinkwrap.resolver.version>3.3.2</shrinkwrap.resolver.version>
     </properties>
 
     <distributionManagement>
