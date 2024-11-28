@@ -45,6 +45,8 @@
         <compiler.unchecked.arg>-Xlint:unchecked</compiler.unchecked.arg>
         <compiler.parameters.arg>-parameters</compiler.parameters.arg>
         <compiler.annotation.processing/>
+        <junit5.parallel.tests.enabled>true</junit5.parallel.tests.enabled>
+        <junit5.parallel.tests.mode>concurrent</junit5.parallel.tests.mode>
         <test.parallel>classes</test.parallel>
         <it.test.parallel>${test.parallel}</it.test.parallel>
         <shrinkwrap.compile.skip>true</shrinkwrap.compile.skip>
@@ -275,8 +277,8 @@
                         <argLine>@{jacocoAgent} @{jdk11SurefireOptions}</argLine>
                         <properties>
                             <configurationParameters>
-                                junit.jupiter.execution.parallel.enabled = true
-                                junit.jupiter.execution.parallel.mode.default = concurrent
+                                junit.jupiter.execution.parallel.enabled = ${junit5.parallel.tests.enabled}
+                                junit.jupiter.execution.parallel.mode.default = ${junit5.parallel.tests.mode}
                             </configurationParameters>
                         </properties>
                     </configuration>
