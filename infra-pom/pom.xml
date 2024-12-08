@@ -38,6 +38,7 @@
         <jacocoPort>52212</jacocoPort>
         <jacocoReset>true</jacocoReset>
         <jacocoAgent/>
+        <jacoco.classDumpDir>${maven.multiModuleProjectDirectory}/target/classes</jacoco.classDumpDir>
         <jdk11SurefireOptions>-Xshare:off</jdk11SurefireOptions>
         <jdk11FailsafeOptions/>
         <compiler.show.warnings>true</compiler.show.warnings>
