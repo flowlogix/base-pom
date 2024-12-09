@@ -573,29 +573,31 @@
         <profile>
             <id>coverage</id>
             <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.jacoco</groupId>
-                        <artifactId>jacoco-maven-plugin</artifactId>
-                        <configuration>
-                            <fileSets>
-                                <fileSet>
-                                    <directory>${project.basedir}</directory>
-                                    <includes>
-                                        <include>**/*.exec</include>
-                                    </includes>
-                                </fileSet>
-                            </fileSets>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>prepare-agent</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.jacoco</groupId>
+                            <artifactId>jacoco-maven-plugin</artifactId>
+                            <configuration>
+                                <fileSets>
+                                    <fileSet>
+                                        <directory>${project.basedir}</directory>
+                                        <includes>
+                                            <include>**/*.exec</include>
+                                        </includes>
+                                    </fileSet>
+                                </fileSets>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <goals>
+                                        <goal>prepare-agent</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
             </build>
         </profile>
     </profiles>
