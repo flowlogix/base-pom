@@ -51,6 +51,7 @@
         <test.parallel>classes</test.parallel>
         <it.test.parallel>${test.parallel}</it.test.parallel>
         <shrinkwrap.compile.skip>true</shrinkwrap.compile.skip>
+        <shrinkwrap.decryption.ignore>true</shrinkwrap.decryption.ignore>
         <test.thread.count>10</test.thread.count>
         <test.run.order>random</test.run.order>
         <test.redirect.to.file>true</test.redirect.to.file>
@@ -343,6 +344,7 @@
                             <arquillian.launch>${arquillian.container}</arquillian.launch>
                             <webdriver.browser>${drone.browser}</webdriver.browser>
                             <org.jboss.shrinkwrap.resolver.maven.skipCompilation>${shrinkwrap.compile.skip}</org.jboss.shrinkwrap.resolver.maven.skipCompilation>
+                            <org.jboss.shrinkwrap.resolver.maven.ignoreDecryptionProblems>${shrinkwrap.decryption.ignore}</org.jboss.shrinkwrap.resolver.maven.ignoreDecryptionProblems>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>
