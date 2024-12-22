@@ -52,6 +52,7 @@
         <it.test.parallel>${test.parallel}</it.test.parallel>
         <shrinkwrap.compile.skip>true</shrinkwrap.compile.skip>
         <shrinkwrap.decryption.ignore>true</shrinkwrap.decryption.ignore>
+        <test.containers.jdk.turnOffSVE>false</test.containers.jdk.turnOffSVE>
         <test.thread.count>10</test.thread.count>
         <test.run.order>random</test.run.order>
         <test.redirect.to.file>true</test.redirect.to.file>
@@ -361,6 +362,7 @@
                         <systemPropertyVariables combine.children="append">
                             <arquillian.launch>${arquillian.container}</arquillian.launch>
                             <webdriver.browser>${drone.browser}</webdriver.browser>
+                            <test.containers.jdk.turn-off-sve>${test.containers.jdk.turnOffSVE}</test.containers.jdk.turn-off-sve>
                             <org.jboss.shrinkwrap.resolver.maven.skipCompilation>${shrinkwrap.compile.skip}</org.jboss.shrinkwrap.resolver.maven.skipCompilation>
                             <org.jboss.shrinkwrap.resolver.maven.ignoreDecryptionProblems>${shrinkwrap.decryption.ignore}</org.jboss.shrinkwrap.resolver.maven.ignoreDecryptionProblems>
                         </systemPropertyVariables>
