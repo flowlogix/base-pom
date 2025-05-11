@@ -29,8 +29,8 @@
         <release.profile>release-flowlogix-to-central</release.profile>
         <release.profiles>${release.profile}</release.profiles>
         <gpg.keyname>Flow Logix, Inc.</gpg.keyname>
-        <staging.server>flowlogix-maven-central-s01</staging.server>
-        <nexus.url>https://s01.oss.sonatype.org</nexus.url>
+        <staging.server>flowlogix-maven-central-portal</staging.server>
+        <nexus.url>https://central.sonatype.com</nexus.url>
         <central.archive.url>https://oss.sonatype.org/service/local/repositories/releases/archive</central.archive.url>
         <arquillian.container/>
         <drone.browser>chromeheadless</drone.browser>
@@ -81,7 +81,7 @@
     <distributionManagement>
         <snapshotRepository>
             <id>${staging.server}</id>
-            <url>${nexus.url}/content/repositories/snapshots/</url>
+            <url>${nexus.url}/repository/maven-snapshots</url>
         </snapshotRepository>
         <site>
             <url>${project.url}</url>
@@ -521,6 +521,9 @@
         </profile>
         <profile>
             <id>release-flowlogix-to-central</id>
+            <properties>
+                <nexus.url>https://repo.maven.apache.org</nexus.url>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -535,16 +538,7 @@
             <distributionManagement>
                 <repository>
                     <id>${staging.server}</id>
-                    <url>${nexus.url}/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
-        </profile>
-        <profile>
-            <id>reproducible-build</id>
-            <distributionManagement>
-                <repository>
-                    <id>${staging.server}</id>
-                    <url>${nexus.url}/service/local/staging/deploy/maven2/</url>
+                    <url>${nexus.url}/maven2</url>
                 </repository>
             </distributionManagement>
         </profile>
