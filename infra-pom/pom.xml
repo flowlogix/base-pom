@@ -30,6 +30,7 @@
         <release.profiles>${release.profile}</release.profiles>
         <gpg.keyname>Flow Logix, Inc.</gpg.keyname>
         <staging.server>flowlogix-maven-central-portal</staging.server>
+        <snapshot.staging.server>${staging.server}-snapshots</snapshot.staging.server>
         <nexus.url>https://central.sonatype.com</nexus.url>
         <central.archive.url>https://oss.sonatype.org/service/local/repositories/releases/archive</central.archive.url>
         <arquillian.container/>
@@ -80,7 +81,7 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>${staging.server}</id>
+            <id>${snapshot.staging.server}</id>
             <url>${nexus.url}/repository/maven-snapshots</url>
         </snapshotRepository>
         <site>
