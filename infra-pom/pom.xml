@@ -16,7 +16,6 @@
 
     <name>Infrastructure POM</name>
     <description>Opinionated infrastructure to be used as parent POM</description>
-    <url>https://github.com/flowlogix/base-pom</url>
 
     <properties>
         <project.build.outputTimestamp>2023-09-20T00:03:03Z</project.build.outputTimestamp>

@@ -17,7 +17,6 @@
 
     <name>Payara configuration POM</name>
     <description>Opinionated Payara configuration to be used as parent POM</description>
-    <url>https://github.com/flowlogix/base-pom</url>
 
     <properties>
         <payara.start.disable>${skipITs}</payara.start.disable>
