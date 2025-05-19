@@ -82,7 +82,7 @@
             <id>${staging.server}</id>
             <url>${nexus.url}/content/repositories/snapshots/</url>
         </snapshotRepository>
-        <site>
+        <site child.site.url.inherit.append.path="false">
             <url>${project.url}</url>
         </site>
     </distributionManagement>
