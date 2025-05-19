@@ -442,7 +442,7 @@
                         <mavenExecutorId>forked-path</mavenExecutorId>
                         <preparationGoals>validate</preparationGoals>
                         <preparationProfiles>skip-checkstyle</preparationProfiles>
-                        <releaseProfiles>${release.profiles},docs</releaseProfiles>
+                        <releaseProfiles>${release.profiles},docs,release-plugins</releaseProfiles>
                         <tagNameFormat>Version-@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
@@ -520,18 +520,24 @@
             </properties>
         </profile>
         <profile>
+            <id>flowlogix-central-portal</id>
+            <properties>
+                <staging.server>flowlogix-maven-central-portal</staging.server>
+                <nexus.url>https://central.sonatype.com</nexus.url>
+            </properties>
+            <distributionManagement>
+                <repository>
+                    <id>${staging.server}</id>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                </repository>
+                <snapshotRepository>
+                    <id>${staging.server}</id>
+                    <url>${nexus.url}/repository/maven-snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
             <id>release-flowlogix-to-central</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.cyclonedx</groupId>
-                        <artifactId>cyclonedx-maven-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </build>
             <distributionManagement>
                 <repository>
                     <id>${staging.server}</id>
@@ -545,17 +551,6 @@
                 <staging.server>hope-nexus-artifacts</staging.server>
                 <nexus.url>https://nexus.hope.nyc.ny.us</nexus.url>
             </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.cyclonedx</groupId>
-                        <artifactId>cyclonedx-maven-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </build>
             <distributionManagement>
                 <repository>
                     <id>${staging.server}</id>
@@ -568,6 +563,20 @@
             <properties>
                 <docs.phase>package</docs.phase>
             </properties>
+        </profile>
+        <profile>
+            <id>release-plugins</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.cyclonedx</groupId>
+                        <artifactId>cyclonedx-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
         <profile>
             <id>skip-checkstyle</id>
