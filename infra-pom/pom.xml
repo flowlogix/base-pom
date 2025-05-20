@@ -25,11 +25,11 @@
         <snippet.path.p2>${project.build.testSourceDirectory}</snippet.path.p2>
         <snippet.path.p3>${project.basedir}/src/demo/java</snippet.path.p3>
         <snippet.path>${snippet.path.p1}:${snippet.path.p2}:${snippet.path.p3}</snippet.path>
-        <release.profile>release-flowlogix-to-central</release.profile>
+        <release.profile>flowlogix-central-portal</release.profile>
         <release.profiles>${release.profile}</release.profiles>
         <gpg.keyname>Flow Logix, Inc.</gpg.keyname>
-        <staging.server>flowlogix-maven-central-s01</staging.server>
-        <nexus.url>https://s01.oss.sonatype.org</nexus.url>
+        <staging.server>flowlogix-maven-central-portal</staging.server>
+        <nexus.url>https://central.sonatype.com</nexus.url>
         <central.archive.url>https://oss.sonatype.org/service/local/repositories/releases/archive</central.archive.url>
         <arquillian.container/>
         <drone.browser>chromeheadless</drone.browser>
@@ -80,7 +80,7 @@
     <distributionManagement>
         <snapshotRepository>
             <id>${staging.server}</id>
-            <url>${nexus.url}/content/repositories/snapshots/</url>
+            <url>${nexus.url}/repository/maven-snapshots</url>
         </snapshotRepository>
         <site child.site.url.inherit.append.path="false">
             <url>${project.url}</url>
@@ -520,28 +520,28 @@
         </profile>
         <profile>
             <id>flowlogix-central-portal</id>
-            <properties>
-                <staging.server>flowlogix-maven-central-portal</staging.server>
-                <nexus.url>https://central.sonatype.com</nexus.url>
-            </properties>
             <distributionManagement>
                 <repository>
                     <id>${staging.server}</id>
                     <url>https://repo.maven.apache.org/maven2</url>
                 </repository>
-                <snapshotRepository>
-                    <id>${staging.server}</id>
-                    <url>${nexus.url}/repository/maven-snapshots</url>
-                </snapshotRepository>
             </distributionManagement>
         </profile>
         <profile>
             <id>release-flowlogix-to-central</id>
+            <properties>
+                <staging.server>flowlogix-maven-central-s01</staging.server>
+                <nexus.url>https://s01.oss.sonatype.org</nexus.url>
+            </properties>
             <distributionManagement>
                 <repository>
                     <id>${staging.server}</id>
                     <url>${nexus.url}/service/local/staging/deploy/maven2/</url>
                 </repository>
+                <snapshotRepository>
+                    <id>${staging.server}</id>
+                    <url>${nexus.url}/content/repositories/snapshots/</url>
+                </snapshotRepository>
             </distributionManagement>
         </profile>
         <profile>
