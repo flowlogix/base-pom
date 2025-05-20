@@ -56,6 +56,7 @@
         <test.run.order>random</test.run.order>
         <test.redirect.to.file>true</test.redirect.to.file>
         <deploy.at-end>true</deploy.at-end>
+        <deploy.retry-failed-count>5</deploy.retry-failed-count>
         <jar.skip-if-empty>true</jar.skip-if-empty>
         <japicmp.skip>true</japicmp.skip>
         <javadoc.doclint>all,-reference</javadoc.doclint>
@@ -428,8 +429,8 @@
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <configuration>
-                        <retryFailedDeploymentCount>5</retryFailedDeploymentCount>
                         <deployAtEnd>${deploy.at-end}</deployAtEnd>
+                        <retryFailedDeploymentCount>${deploy.retry-failed-count}</retryFailedDeploymentCount>
                     </configuration>
                 </plugin>
                 <plugin>
