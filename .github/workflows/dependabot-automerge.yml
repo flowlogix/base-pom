@@ -6,6 +6,9 @@ on:
         required: false
         type: string
         default: "main"
+    secrets:
+        github-token:
+            required: true
 
 jobs:
   automerge:
