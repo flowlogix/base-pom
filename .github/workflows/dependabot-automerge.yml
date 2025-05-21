@@ -7,9 +7,8 @@ on:
         type: string
         default: "main"
       github-token:
-        required: false
+        required: true
         type: string
-        default: "${{ secrets.GH_AUTOMERGE_TOKEN }}"
 
 jobs:
   automerge:

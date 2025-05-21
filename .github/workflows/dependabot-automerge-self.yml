@@ -8,3 +8,5 @@ on:
 jobs:
   call-automerge:
     uses: flowlogix/base-pom/.github/workflows/dependabot-automerge.yml@main
+    with:
+      github-token: ${{ secrets.GH_AUTOMERGE_TOKEN }}
