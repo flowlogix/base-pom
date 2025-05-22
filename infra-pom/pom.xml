@@ -40,6 +40,7 @@
         <jacoco.classDumpDir>${maven.multiModuleProjectDirectory}/target/classes</jacoco.classDumpDir>
         <jdk11SurefireOptions>-Xshare:off</jdk11SurefireOptions>
         <jdk11FailsafeOptions/>
+        <mockito.agentOptions>-javaagent:${org.mockito:mockito-core:jar}</mockito.agentOptions>
         <compiler.show.warnings>true</compiler.show.warnings>
         <compiler.deprecation.arg>-Xlint:deprecation</compiler.deprecation.arg>
         <compiler.unchecked.arg>-Xlint:unchecked</compiler.unchecked.arg>
@@ -76,6 +77,7 @@
         <lombok.javadoc.version>${lombok.version}</lombok.javadoc.version>
         <shrinkwrap.api.version>1.2.6</shrinkwrap.api.version>
         <shrinkwrap.resolver.version>3.3.4</shrinkwrap.resolver.version>
+        <mockito.version>5.18.0</mockito.version>
     </properties>
 
     <distributionManagement>
@@ -95,6 +97,12 @@
                 <artifactId>jakarta.jakartaee-core-api</artifactId>
                 <version>${jakarta.ee.version}</version>
                 <scope>provided</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
                 <optional>true</optional>
             </dependency>
             <dependency>
@@ -221,6 +229,17 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
             <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-properties</id>
+                        <goals>
+                            <goal>properties</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>3.6.0</version>
@@ -333,7 +352,7 @@
                         <threadCount>${test.thread.count}</threadCount>
                         <runOrder>${test.run.order}</runOrder>
                         <redirectTestOutputToFile>${test.redirect.to.file}</redirectTestOutputToFile>
-                        <argLine>@{jacocoAgent} @{jdk11SurefireOptions}</argLine>
+                        <argLine>@{jacocoAgent} @{jdk11SurefireOptions} ${mockito.agentOptions}</argLine>
                         <properties>
                             <configurationParameters>
                                 junit.jupiter.execution.parallel.enabled = ${junit5.parallel.tests.enabled}
@@ -358,7 +377,7 @@
                         <threadCount>${test.thread.count}</threadCount>
                         <runOrder>${test.run.order}</runOrder>
                         <redirectTestOutputToFile>${test.redirect.to.file}</redirectTestOutputToFile>
-                        <argLine>@{jacocoAgent} @{jdk11FailsafeOptions}</argLine>
+                        <argLine>@{jacocoAgent} @{jdk11FailsafeOptions} ${mockito.agentOptions}</argLine>
                         <systemPropertyVariables combine.children="append">
                             <arquillian.launch>${arquillian.container}</arquillian.launch>
                             <webdriver.browser>${drone.browser}</webdriver.browser>
