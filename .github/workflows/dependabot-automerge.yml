@@ -44,7 +44,7 @@ jobs:
             while (tries < maxTries) {
               const checks = await github.rest.checks.listForRef({ owner, repo, ref });
               const pendingChecks = checks.data.check_runs.filter(
-                c => c.name !== currentWorkflow && c.status !== 'completed'
+                c => !c.name.endsWith('automerge') && c.status !== 'completed'
               );
               const failedChecks = checks.data.check_runs.filter(
                 c => c.status === 'completed' && c.conclusion !== 'success'
