@@ -43,13 +43,21 @@ jobs:
             let tries = 0, maxTries = 40;
             while (tries < maxTries) {
               const checks = await github.rest.checks.listForRef({ owner, repo, ref });
-              const pendingChecks = checks.data.check_runs.filter(
+              const pendingChecksOnly = checks.data.check_runs.filter(
                 c => !c.name.endsWith('automerge') && c.status !== 'completed'
               );
-              const failedChecks = checks.data.check_runs.filter(
+              const statuses = await github.rest.repos.getCombinedStatusForRef({ owner, repo, ref });
+              const pendingStatuses = statuses.data.statuses.filter(s => s.state === 'pending');
+              pendingChecks = [...pendingChecksOnly,
+                ...pendingStatuses.map(s => ({ name: s.context, conclusion: s.state }))];
+
+              const failedChecksOnly = checks.data.check_runs.filter(
                 c => c.status === 'completed' && c.conclusion !== 'success' &&
                      c.conclusion !== 'neutral' && c.conclusion !== 'skipped'
               );
+              const failedStatuses = statuses.data.statuses.filter(s => s.state === 'failure' || s.state === 'error');
+              const failedChecks = [...failedChecksOnly,
+                ...failedStatuses.map(s => ({ name: s.context, conclusion: s.state }))];
               if (failedChecks.length > 0) {
                 core.notice(
                   'Some checks are failing: ' +
