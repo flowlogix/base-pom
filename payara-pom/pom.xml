@@ -26,7 +26,8 @@
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
         <payara.imageName/>
-        <payara.asadmin.executable>${root.basedir}/target/dependency/payara6/bin/asadmin</payara.asadmin.executable>
+        <payara.asadmin.executable.suffix/>
+        <payara.asadmin.executable>${root.basedir}/target/dependency/payara6/bin/asadmin${payara.asadmin.executable.suffix}</payara.asadmin.executable>
         <payara.http.port>80</payara.http.port>
         <payara.https.port>8181</payara.https.port>
         <testcontainers.skip>true</testcontainers.skip>
@@ -161,6 +162,17 @@
                 <payara.start.skip>true</payara.start.skip>
                 <arquillian.container>payara-docker</arquillian.container>
                 <testcontainers.skip>false</testcontainers.skip>
+            </properties>
+        </profile>
+        <profile>
+            <id>ms-windows</id>
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+            </activation>
+            <properties>
+                <payara.asadmin.executable.suffix>.bat</payara.asadmin.executable.suffix>
             </properties>
         </profile>
     </profiles>
