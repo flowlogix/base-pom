@@ -13,3 +13,10 @@ updates:
     ignore:
       - dependency-name: "jakarta.platform:*"
         update-types: ["version-update:semver-major"]
+
+# Dependencies for GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    open-pull-requests-limit: 10
