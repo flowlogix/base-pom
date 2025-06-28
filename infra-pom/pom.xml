@@ -18,7 +18,7 @@
     <description>Opinionated infrastructure to be used as parent POM</description>
 
     <properties>
-        <project.build.outputTimestamp>2023-09-20T00:03:03Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2025-06-20T00:03:03Z</project.build.outputTimestamp>
         <docs.phase>deploy</docs.phase>
         <delombok.phase>none</delombok.phase>
         <snippet.path.p1>${project.build.sourceDirectory}</snippet.path.p1>
@@ -492,27 +492,6 @@
                             <goals>
                                 <goal>makeAggregateBom</goal>
                             </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.commonjava.maven.plugins</groupId>
-                    <artifactId>directory-maven-plugin</artifactId>
-                    <version>1.0</version>
-                    <executions>
-                        <execution>
-                            <id>directories</id>
-                            <goals>
-                                <goal>directory-of</goal>
-                            </goals>
-                            <phase>validate</phase>
-                            <configuration>
-                                <property>${base.directory.property}</property>
-                                <project>
-                                    <groupId>${base.directory.groupId}</groupId>
-                                    <artifactId>${base.directory.artifactId}</artifactId>
-                                </project>
-                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
