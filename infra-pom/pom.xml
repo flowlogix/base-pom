@@ -66,7 +66,7 @@
         <javadoc.snippet.path.options>--snippet-path ${javadoc.snippet.path}</javadoc.snippet.path.options>
         <checkstyle.configLocation>checkstyle.xml</checkstyle.configLocation>
         <checkstyle.headerLocation>flowlogix-header.txt</checkstyle.headerLocation>
-        <checkstyle.supressionsLocation/>
+        <checkstyle.suppressionsLocation/>
         <checkstyle.excludes>**/module-info.java</checkstyle.excludes>
 
         <jdk.minimum.version>${maven.compiler.release}</jdk.minimum.version>
@@ -267,7 +267,7 @@
                 <configuration>
                     <configLocation>${checkstyle.configLocation}</configLocation>
                     <headerLocation>${checkstyle.headerLocation}</headerLocation>
-                    <suppressionsLocation>${checkstyle.supressionsLocation}</suppressionsLocation>
+                    <suppressionsLocation>${checkstyle.suppressionsLocation}</suppressionsLocation>
                     <linkXRef>true</linkXRef>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
