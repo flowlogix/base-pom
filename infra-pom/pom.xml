@@ -30,7 +30,6 @@
         <gpg.keyname>Flow Logix, Inc.</gpg.keyname>
         <staging.server>flowlogix-maven-central-portal</staging.server>
         <nexus.url>https://central.sonatype.com</nexus.url>
-        <central.archive.url>https://oss.sonatype.org/service/local/repositories/releases/archive</central.archive.url>
         <arquillian.container/>
         <drone.browser>chromeheadless</drone.browser>
         <jacocoAddress>localhost</jacocoAddress>
@@ -407,7 +406,7 @@
                         <additionalOptions>${javadoc.snippet.path.options}</additionalOptions>
                         <links combine.children="append">
                             <link>https://jakarta.ee/specifications/platform/${jakarta.ee.parsed.majorVersion}/apidocs</link>
-                            <link>${central.archive.url}/org/projectlombok/lombok/${lombok.javadoc.version}/lombok-${lombok.javadoc.version}-javadoc.jar/!</link>
+                            <link>https://projectlombok.org/api/</link>
                         </links>
                         <notimestamp>true</notimestamp>
                     </configuration>
