@@ -1,0 +1,5 @@
+= Base POM
+
+Dramatically simplifies your project's build configuration, to be used in your projects as a parent POM.
+
+Please see https://docs.flowlogix.com/base-pom[documentation]
