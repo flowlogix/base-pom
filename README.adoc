@@ -1,5 +1,6 @@
 = Base POM
 
-Dramatically simplifies your project's build configuration, to be used in your projects as a parent POM.
+Dramatically simplifies your project's build configuration, to be used in your projects as a parent POM. +
+Supports Maven 4 and 3
 
 Please see https://docs.flowlogix.com/base-pom[documentation]
