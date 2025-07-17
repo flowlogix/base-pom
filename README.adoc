@@ -3,4 +3,7 @@
 Dramatically simplifies your project's build configuration, to be used in your projects as a parent POM. +
 Supports Maven 4 and 3
 
+== Usage
+Inherit from this POM in your project's `pom.xml`, then remove 1000s of lines of boilerplate configuration, and override the provided properties to configure your project if needed. Base POM is designed to stay out of your way, while providing a solid foundation for your Maven projects. Anything that's not necessary for your project can be opted out or overridden.
+
 Please see https://docs.flowlogix.com/base-pom[documentation]
