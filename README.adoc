@@ -7,3 +7,16 @@ Supports Maven 4 and 3
 Inherit from this POM in your project's `pom.xml`, then remove 1000s of lines of boilerplate configuration, and override the provided properties to configure your project if needed. Base POM is designed to stay out of your way, while providing a solid foundation for your Maven projects. Anything that's not necessary for your project can be opted out or overridden.
 
 Please see https://docs.flowlogix.com/base-pom[documentation]
+
+== Frequently Asked Questions
+Q: Is this just for Flow Logix, or can I use it for my own projects? +
+A: This is a general-purpose parent POM that can be used for any project. It is not specific to Flow Logix. You can override the default settings to suit your project's name, developers, scm or any other section necessary to customize it for your own project.
+
+Q: Which one do I choose? `infra`, `payara` or `base`? +
+A: The `base` POM is minimal and can be used for any project. The `infra` POM is opinionated with many features and preconfigured defaults, while the `payara` POM is for projects that use Payara Platform. If you are not sure which one to use, start with the `base` POM.
+
+Q: I already have a parent POM, can I use this one? +
+A: Yes, you can use this POM as a parent POM for your project's parent POM. Then, you can remove all the dependencies and plugins that you do not need. This POM is designed to be flexible and can be used as a starting point for your own parent POM.
+
+Q: How often is this updated? +
+A: This POM is updated regularly to keep up with the latest versions of the dependencies and plugins. On averaage, it is updated weekly.
