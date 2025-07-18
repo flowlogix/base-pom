@@ -6,7 +6,32 @@ Supports Maven 4 and 3
 == Usage
 Inherit from this POM in your project's `pom.xml`, then remove 1000s of lines of boilerplate configuration, and override the provided properties to configure your project if needed. Base POM is designed to stay out of your way, while providing a solid foundation for your Maven projects. Anything that's not necessary for your project can be opted out or overridden.
 
-Please see https://docs.flowlogix.com/base-pom[documentation]
+Please see https://docs.flowlogix.com/base-pom[documentation] or use the https://start.flowlogix.com[Quick Start Page] to download a sample project
+
+[code,xml]
+.Trivial Example
+----
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>starter</artifactId>
+    <version>1.x-SNAPSHOT</version>
+
+    <name>Starter Project</name>
+
+    <parent>
+        <groupId>com.flowlogix</groupId>
+        <artifactId>base-pom</artifactId>
+        <version>LATEST</version>
+    </parent>
+
+    <properties>
+        <maven.compiler.release>24</maven.compiler.release>
+    </properties>
+</project>
+----
 
 == Frequently Asked Questions
 Q: Is this just for Flow Logix, or can I use it for my own projects? +
