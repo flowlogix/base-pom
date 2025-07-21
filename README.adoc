@@ -33,6 +33,11 @@ Please see https://docs.flowlogix.com/base-pom[documentation] or use the https:/
 </project>
 ----
 
+== Complete examples
+https://github.com/flowlogix/flowlogix[Jakarta EE Components] +
+https://github.com/lprimak/apps[Starter Generator, Email Manager] +
+https://github.com/flowlogix/test-arq-suite[Arquillian Test Example]
+
 == Frequently Asked Questions
 Q: Is this just for Flow Logix, or can I use it for my own projects? +
 A: This is a general-purpose parent POM that can be used for any project. It is not specific to Flow Logix. You can override the default settings to suit your project's name, developers, scm or any other section necessary to customize it for your own project.
