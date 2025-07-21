@@ -68,6 +68,9 @@
         <checkstyle.headerLocation>flowlogix-header.txt</checkstyle.headerLocation>
         <checkstyle.suppressionsLocation/>
         <checkstyle.excludes>**/module-info.java</checkstyle.excludes>
+        <ear.defaultLibBundleDir>lib</ear.defaultLibBundleDir>
+        <ear.skinnyWars>true</ear.skinnyWars>
+        <ear.skipClassPathModification>true</ear.skipClassPathModification>
 
         <jdk.minimum.version>${maven.compiler.release}</jdk.minimum.version>
         <maven.minimum.version>3.6</maven.minimum.version>
@@ -493,6 +496,14 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-ear-plugin</artifactId>
+                    <configuration>
+                        <defaultLibBundleDir>${ear.defaultLibBundleDir}</defaultLibBundleDir>
+                        <skinnyWars>${ear.skinnyWars}</skinnyWars>
+                        <skipClassPathModification>${ear.skipClassPathModification}</skipClassPathModification>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
