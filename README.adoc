@@ -8,8 +8,19 @@ Inherit from this POM in your project's `pom.xml`, then remove 1000s of lines of
 
 Please see https://docs.flowlogix.com/base-pom[documentation] or use the https://start.flowlogix.com[Quick Start Page] to download a sample project
 
+[code,shell]
+.Single-line starter - generate a JAR sample via curl
+----
+curl -sSL https://start.flowlogix.com/download -o starter.zip
+----
+[code,shell]
+.Single-line starter - generate a WAR sample via curl
+----
+curl -sSL "https://start.flowlogix.com/download/;packagingType=war" -o starter.zip
+----
+
 [code,xml]
-.Trivial Example (Note: replaces LATEST with a concrete version number)
+.Trivial Example (**Note**: replaces LATEST with a concrete version number)
 ----
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
