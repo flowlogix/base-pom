@@ -80,8 +80,6 @@
         <shrinkwrap.api.version>1.2.6</shrinkwrap.api.version>
         <shrinkwrap.resolver.version>3.3.4</shrinkwrap.resolver.version>
         <mockito.version>5.20.0</mockito.version>
-        <!-- workaround for https://github.com/apache/maven-compiler-plugin/issues/960 -->
-        <asm.version>9.8</asm.version>
     </properties>
 
     <distributionManagement>
@@ -348,14 +346,6 @@
                         </compilerArgs>
                         <proc>${compiler.annotation.processing}</proc>
                     </configuration>
-                    <!-- workaround for https://github.com/apache/maven-compiler-plugin/issues/960 -->
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.ow2.asm</groupId>
-                            <artifactId>asm</artifactId>
-                            <version>${asm.version}</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
