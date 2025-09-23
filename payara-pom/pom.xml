@@ -39,6 +39,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>unpack-payara</id>
                         <phase>pre-integration-test</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -65,7 +66,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>start-domain</id>
+                        <id>start-payara-domain</id>
                         <phase>pre-integration-test</phase>
                         <configuration>
                             <executable>${payara.asadmin.executable}</executable>
@@ -79,7 +80,7 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>stop-domain</id>
+                        <id>stop-payara-domain</id>
                         <phase>post-integration-test</phase>
                         <configuration>
                             <executable>${payara.asadmin.executable}</executable>
