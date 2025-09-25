@@ -36,6 +36,11 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>com.flowlogix.plugins</groupId>
+                <artifactId>container-deploy-plugin</artifactId>
+                <version>0.1</version>
+            </plugin>
+            <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
