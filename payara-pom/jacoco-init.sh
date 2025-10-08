@@ -1,5 +1,12 @@
 #!/bin/bash -p
 
+shiro_mode=false
+for arg in "$@"; do
+  if [[ "$arg" == "--shiro" ]]; then
+    shiro_mode=true
+  fi
+done
+
 if command -v mvn >/dev/null 2>&1; then
   mvn_cmd="mvn"
 else
@@ -13,7 +20,7 @@ else
   profiles='-Pcoverage,ci'
 fi
 
-if [[ "$PWD" == *shiro* ]]; then
+if $shiro_mode; then
   mvn_opts="-pl :jakarta-ee-support"
 else
   mvn_opts="-N"
