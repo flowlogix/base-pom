@@ -8,18 +8,19 @@ Inherit from this POM in your project's `pom.xml`, then remove 1000s of lines of
 
 Please see https://docs.flowlogix.com/base-pom[documentation] or use the https://start.flowlogix.com[Quick Start Page] to download a sample project
 
-[code,shell]
+[source,shell]
 .Single-line starter - generate a JAR sample via curl
 ----
 curl -sSL https://start.flowlogix.com/download -o starter.zip
 ----
-[code,shell]
+
+[source,shell]
 .Single-line starter - generate a WAR sample via curl
 ----
 curl -sSL "https://start.flowlogix.com/download/;packagingType=war" -o starter.zip
 ----
 
-[code,xml]
+[source,xml]
 .Trivial Example (**Note**: replaces LATEST with a concrete version number)
 ----
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -51,13 +52,14 @@ https://github.com/flowlogix/test-arq-suite[Arquillian Test Example]
 
 == Updating Dependencies
 .Update dependencies (except plugins, as they are defined in this parent project)
-[code,shell]
+[source,shell]
 ----
 mvn -U -ntp versions:use-latest-releases versions:update-parent versions:update-properties \
 -DgenerateBackupPoms=false \
 -Dmaven.version.rules=https://raw.githubusercontent.com/flowlogix/base-pom/main/versions-ruleset.xml
 ----
-[code,shell]
+
+[source,shell]
 .Display outdated plugins
 ----
 mvn -U -ntp versions:display-plugin-updates -DgenerateBackupPoms=false -DprocessUnboundPlugins=true
