@@ -247,9 +247,10 @@
                 <version>3.6.1</version>
                 <executions>
                     <execution>
-                        <id>add-demos-parse-version</id>
+                        <id>add-jpa-metamodel-demos-parse-version</id>
                         <configuration>
                             <sources>
+                                <source>target/generated-sources/annotations</source>
                                 <source>src/demo/java</source>
                             </sources>
                             <versionString>${jakarta.ee.version}</versionString>
@@ -257,6 +258,7 @@
                         </configuration>
                         <phase>validate</phase>
                         <goals>
+                            <goal>add-source</goal>
                             <goal>add-test-source</goal>
                             <goal>parse-version</goal>
                         </goals>
