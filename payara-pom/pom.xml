@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
     <artifactId>payara-pom</artifactId>
-    <version>x-SNAPSHOT</version>
+    <version>80</version>
 
     <parent>
         <groupId>com.flowlogix</groupId>
         <artifactId>infra-pom</artifactId>
-        <version>x-SNAPSHOT</version>
+        <version>80</version>
         <relativePath>../infra-pom</relativePath>
     </parent>
 
@@ -26,8 +24,8 @@
         <root.basedir>${maven.multiModuleProjectDirectory}</root.basedir>
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
-        <payara.imageName/>
-        <payara.asadmin.executable.suffix/>
+        <payara.imageName />
+        <payara.asadmin.executable.suffix />
         <payara.asadmin.executable>${root.basedir}/target/dependency/payara6/bin/asadmin${payara.asadmin.executable.suffix}</payara.asadmin.executable>
         <payara.http.port>80</payara.http.port>
         <payara.https.port>8181</payara.https.port>
