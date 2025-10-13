@@ -251,6 +251,7 @@
                         <configuration>
                             <sources>
                                 <source>src/demo/java</source>
+                                <source>target/generated-test-sources/test-annotations</source>
                             </sources>
                             <versionString>${jakarta.ee.version}</versionString>
                             <propertyPrefix>jakarta.ee.parsed</propertyPrefix>
