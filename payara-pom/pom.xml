@@ -22,7 +22,7 @@
         <payara.start.disable>${skipITs}</payara.start.disable>
         <payara.start.skip>${payara.start.disable}</payara.start.skip>
         <payara.version>6.2025.10</payara.version>
-        <container.deploy.plugin.version>0.5.4</container.deploy.plugin.version>
+        <container.deploy.plugin.version>0.6.0</container.deploy.plugin.version>
         <root.basedir>${maven.multiModuleProjectDirectory}</root.basedir>
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
@@ -45,7 +45,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>unpack-payara</id>
+                        <id>unpack-server</id>
                         <phase>pre-integration-test</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -72,7 +72,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>start-payara-domain</id>
+                        <id>start-domain</id>
                         <phase>pre-integration-test</phase>
                         <configuration>
                             <executable>${payara.asadmin.executable}</executable>
@@ -86,7 +86,7 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>stop-payara-domain</id>
+                        <id>stop-domain</id>
                         <phase>post-integration-test</phase>
                         <configuration>
                             <executable>${payara.asadmin.executable}</executable>
