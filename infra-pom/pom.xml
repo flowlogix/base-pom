@@ -566,7 +566,7 @@
             </build>
         </profile>
         <profile>
-            <id>release-flowlogix-to-central</id>
+            <id>release-to-central</id>
             <properties>
                 <staging.server>flowlogix-maven-central-s01</staging.server>
                 <nexus.url>https://s01.oss.sonatype.org</nexus.url>
@@ -583,10 +583,10 @@
             </distributionManagement>
         </profile>
         <profile>
-            <id>release-flowlogix-to-hope</id>
+            <id>release-to-flowlogix</id>
             <properties>
-                <staging.server>hope-nexus-artifacts</staging.server>
-                <nexus.url>https://nexus.hope.nyc.ny.us</nexus.url>
+                <staging.server>flowlogix-nexus-artifacts</staging.server>
+                <nexus.url>https://nexus.flowlogix.com</nexus.url>
             </properties>
             <distributionManagement>
                 <repository>
