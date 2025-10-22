@@ -566,23 +566,6 @@
             </build>
         </profile>
         <profile>
-            <id>release-to-central</id>
-            <properties>
-                <staging.server>flowlogix-maven-central-s01</staging.server>
-                <nexus.url>https://s01.oss.sonatype.org</nexus.url>
-            </properties>
-            <distributionManagement>
-                <repository>
-                    <id>${staging.server}</id>
-                    <url>${nexus.url}/service/local/staging/deploy/maven2/</url>
-                </repository>
-                <snapshotRepository>
-                    <id>${staging.server}</id>
-                    <url>${nexus.url}/content/repositories/snapshots/</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
-        <profile>
             <id>release-to-flowlogix</id>
             <properties>
                 <staging.server>flowlogix-nexus-artifacts</staging.server>
