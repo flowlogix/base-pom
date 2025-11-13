@@ -13,6 +13,10 @@ updates:
     ignore:
       - dependency-name: "jakarta.platform:*"
         update-types: ["version-update:semver-major"]
+      - dependency-name: "fish.payara.distributions:payara"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "fish.payara.extras:payara-micro"
+        update-types: ["version-update:semver-major"]
 
 # Dependencies for GitHub Actions
   - package-ecosystem: 'github-actions'
