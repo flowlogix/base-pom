@@ -21,7 +21,7 @@
     <properties>
         <payara.start.disable>${skipITs}</payara.start.disable>
         <payara.start.skip>${payara.start.disable}</payara.start.skip>
-        <payara.version>6.2025.10</payara.version>
+        <payara.version>6.2025.11</payara.version>
         <container.deploy.plugin.version>0.6.0</container.deploy.plugin.version>
         <root.basedir>${maven.multiModuleProjectDirectory}</root.basedir>
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
