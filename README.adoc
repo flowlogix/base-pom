@@ -38,10 +38,6 @@ curl -sSL "https://start.flowlogix.com/download/;packagingType=war" -o starter.z
         <artifactId>base-pom</artifactId>
         <version>LATEST</version>
     </parent>
-
-    <properties>
-        <maven.compiler.release>24</maven.compiler.release>
-    </properties>
 </project>
 ----
 
