@@ -44,7 +44,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <jar.skip-if-empty>false</jar.skip-if-empty>
 
-        <maven.war.plugin.version>3.5.0</maven.war.plugin.version>
+        <maven.war.plugin.version>3.5.1</maven.war.plugin.version>
     </properties>
 
     <modules>
