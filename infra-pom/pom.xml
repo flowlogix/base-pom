@@ -323,6 +323,8 @@
                         <breakBuildOnBinaryIncompatibleModifications>true</breakBuildOnBinaryIncompatibleModifications>
                         <breakBuildOnSourceIncompatibleModifications>true</breakBuildOnSourceIncompatibleModifications>
                         <onlyModified>true</onlyModified>
+                        <!-- See https://github.com/siom79/japicmp/issues/473 -->
+                        <skipPomModules>true</skipPomModules>
                     </parameter>
                 </configuration>
                 <executions>
