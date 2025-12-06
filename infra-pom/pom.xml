@@ -535,6 +535,12 @@
 
     <profiles>
         <profile>
+            <id>maven4-required</id>
+            <properties>
+                <maven.minimum.version>[4.0.0-rc,)</maven.minimum.version>
+            </properties>
+        </profile>
+        <profile>
             <id>annotation-processing-full</id>
             <activation>
                 <jdk>[21,)</jdk>
