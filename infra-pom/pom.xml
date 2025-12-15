@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
     <artifactId>infra-pom</artifactId>
-    <version>x-SNAPSHOT</version>
+    <version>95</version>
 
     <parent>
         <groupId>com.flowlogix</groupId>
         <artifactId>base-pom</artifactId>
-        <version>x-SNAPSHOT</version>
+        <version>95</version>
     </parent>
 
     <name>Infrastructure POM</name>
     <description>Opinionated infrastructure to be used as parent POM</description>
 
     <properties>
-        <project.build.outputTimestamp>2025-06-20T00:03:03Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2025-12-15T22:29:02Z</project.build.outputTimestamp>
         <docs.phase>deploy</docs.phase>
         <delombok.phase>none</delombok.phase>
         <snippet.path.p1>${project.build.sourceDirectory}</snippet.path.p1>
@@ -30,21 +28,21 @@
         <gpg.keyname>Flow Logix, Inc.</gpg.keyname>
         <staging.server>flowlogix-maven-central-portal</staging.server>
         <nexus.url>https://central.sonatype.com</nexus.url>
-        <arquillian.container/>
+        <arquillian.container />
         <drone.browser>chromeheadless</drone.browser>
         <jacocoAddress>localhost</jacocoAddress>
         <jacocoPort>52212</jacocoPort>
         <jacocoReset>true</jacocoReset>
-        <jacocoAgent/>
+        <jacocoAgent />
         <jacoco.classDumpDir>${maven.multiModuleProjectDirectory}/target/classes</jacoco.classDumpDir>
         <jdk11SurefireOptions>-Xshare:off</jdk11SurefireOptions>
-        <jdk11FailsafeOptions/>
+        <jdk11FailsafeOptions />
         <mockito.agentOptions>-javaagent:${org.mockito:mockito-core:jar}</mockito.agentOptions>
         <compiler.show.warnings>true</compiler.show.warnings>
         <compiler.deprecation.arg>-Xlint:deprecation</compiler.deprecation.arg>
         <compiler.unchecked.arg>-Xlint:unchecked</compiler.unchecked.arg>
         <compiler.parameters.arg>-parameters</compiler.parameters.arg>
-        <compiler.annotation.processing/>
+        <compiler.annotation.processing />
         <junit5.parallel.tests.enabled>true</junit5.parallel.tests.enabled>
         <junit5.parallel.tests.mode>concurrent</junit5.parallel.tests.mode>
         <test.parallel>classes</test.parallel>
@@ -66,7 +64,7 @@
         <javadoc.snippet.path.options>--snippet-path ${javadoc.snippet.path}</javadoc.snippet.path.options>
         <checkstyle.configLocation>checkstyle.xml</checkstyle.configLocation>
         <checkstyle.headerLocation>flowlogix-header.txt</checkstyle.headerLocation>
-        <checkstyle.suppressionsLocation/>
+        <checkstyle.suppressionsLocation />
         <checkstyle.excludes>**/module-info.java</checkstyle.excludes>
         <ear.defaultLibBundleDir>lib</ear.defaultLibBundleDir>
         <ear.skinnyWars>true</ear.skinnyWars>
@@ -207,7 +205,7 @@
                                     <version>${jdk.minimum.version}</version>
                                     <message>Required JDK version to build is at least ${maven.compiler.release}</message>
                                 </requireJavaVersion>
-                                <dependencyConvergence/>
+                                <dependencyConvergence />
                             </rules>
                         </configuration>
                     </execution>
@@ -317,7 +315,7 @@
                     <dependency>
                         <groupId>com.flowlogix</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>x-SNAPSHOT</version>
+                        <version>95</version>
                     </dependency>
                 </dependencies>
             </plugin>
