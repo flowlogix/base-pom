@@ -22,6 +22,7 @@
         <payara.start.disable>${skipITs}</payara.start.disable>
         <payara.start.skip>${payara.start.disable}</payara.start.skip>
         <payara.version>7.2025.2</payara.version>
+        <arquillian.payara.version>3.1</arquillian.payara.version>
         <container.deploy.plugin.version>0.6.0</container.deploy.plugin.version>
         <root.basedir>${maven.multiModuleProjectDirectory}</root.basedir>
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
@@ -33,6 +34,21 @@
         <payara.https.port>8181</payara.https.port>
         <testcontainers.skip>true</testcontainers.skip>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>fish.payara.arquillian</groupId>
+            <artifactId>arquillian-payara-server-remote</artifactId>
+            <version>${arquillian.payara.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+            <version>5.0.0-B13</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
