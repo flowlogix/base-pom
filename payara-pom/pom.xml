@@ -24,7 +24,7 @@
         <payara.version>7.2025.2</payara.version>
         <eclipselink.version>5.0.0-B13</eclipselink.version>
         <arquillian.payara.version>3.1</arquillian.payara.version>
-        <container.deploy.plugin.version>0.6.0</container.deploy.plugin.version>
+        <container.deploy.plugin.version>1.0</container.deploy.plugin.version>
         <root.basedir>${maven.multiModuleProjectDirectory}</root.basedir>
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
