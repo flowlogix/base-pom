@@ -630,7 +630,7 @@
             <id>include-flowlogix-bom</id>
             <activation>
                 <property>
-                    <name>!flowlogix-bom.skip</name>
+                    <name>!flowlogix.bom.skip</name>
                 </property>
             </activation>
             <dependencyManagement>
