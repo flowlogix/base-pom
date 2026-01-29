@@ -37,6 +37,7 @@
         <jacocoReset>true</jacocoReset>
         <jacocoAgent/>
         <jacoco.classDumpDir>${maven.multiModuleProjectDirectory}/target/classes</jacoco.classDumpDir>
+        <argLine/>
         <jdk11SurefireOptions>-Xshare:off</jdk11SurefireOptions>
         <jdk11FailsafeOptions/>
         <mockito.agentOptions>-javaagent:${org.mockito:mockito-core:jar}</mockito.agentOptions>
@@ -368,7 +369,7 @@
                         <threadCount>${test.thread.count}</threadCount>
                         <runOrder>${test.run.order}</runOrder>
                         <redirectTestOutputToFile>${test.redirect.to.file}</redirectTestOutputToFile>
-                        <argLine>@{jacocoAgent} @{jdk11SurefireOptions} ${mockito.agentOptions}</argLine>
+                        <argLine>@{argLine} @{jacocoAgent} @{jdk11SurefireOptions} ${mockito.agentOptions}</argLine>
                         <properties>
                             <configurationParameters>
                                 junit.jupiter.execution.parallel.enabled = ${junit5.parallel.tests.enabled}
@@ -393,7 +394,7 @@
                         <threadCount>${test.thread.count}</threadCount>
                         <runOrder>${test.run.order}</runOrder>
                         <redirectTestOutputToFile>${test.redirect.to.file}</redirectTestOutputToFile>
-                        <argLine>@{jacocoAgent} @{jdk11FailsafeOptions} ${mockito.agentOptions}</argLine>
+                        <argLine>@{argLine} @{jacocoAgent} @{jdk11FailsafeOptions} ${mockito.agentOptions}</argLine>
                         <systemPropertyVariables combine.children="append">
                             <arquillian.launch>${arquillian.container}</arquillian.launch>
                             <webdriver.browser>${drone.browser}</webdriver.browser>
