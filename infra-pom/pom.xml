@@ -80,7 +80,7 @@
         <lombok.version>1.18.42</lombok.version>
         <lombok.javadoc.version>${lombok.version}</lombok.javadoc.version>
         <shrinkwrap.api.version>1.2.6</shrinkwrap.api.version>
-        <shrinkwrap.resolver.version>3.3.4</shrinkwrap.resolver.version>
+        <shrinkwrap.resolver.version>3.3.5</shrinkwrap.resolver.version>
         <mockito.version>5.21.0</mockito.version>
     </properties>
 
