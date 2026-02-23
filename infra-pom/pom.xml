@@ -639,7 +639,7 @@
                     <dependency>
                         <groupId>com.flowlogix</groupId>
                         <artifactId>flowlogix-bom</artifactId>
-                        <version>19</version>
+                        <version>20</version>
                         <scope>import</scope>
                         <type>pom</type>
                     </dependency>
