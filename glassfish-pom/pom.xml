@@ -21,16 +21,16 @@
     <properties>
         <glassfish.start.disable>${skipITs}</glassfish.start.disable>
         <glassfish.start.skip>${glassfish.start.disable}</glassfish.start.skip>
-        <glassfish.version>8.0.2</glassfish.version>
+        <glassfish.version>7.1.0</glassfish.version>
         <eclipselink.version>5.0.0</eclipselink.version>
-        <arquillian.glassfish.version>1.2</arquillian.glassfish.version>
+        <arquillian.glassfish.version>1.8</arquillian.glassfish.version>
         <container.deploy.plugin.version>1.3.1</container.deploy.plugin.version>
         <root.basedir>${maven.multiModuleProjectDirectory}</root.basedir>
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
         <glassfish.imageName/>
         <glassfish.asadmin.executable.suffix/>
-        <glassfish.asadmin.executable>${root.basedir}/target/dependency/glassfish8/bin/asadmin${glassfish.asadmin.executable.suffix}</glassfish.asadmin.executable>
+        <glassfish.asadmin.executable>${root.basedir}/target/dependency/glassfish7/bin/asadmin${glassfish.asadmin.executable.suffix}</glassfish.asadmin.executable>
         <glassfish.http.port>8080</glassfish.http.port>
         <glassfish.https.port>8181</glassfish.https.port>
         <testcontainers.skip>true</testcontainers.skip>
