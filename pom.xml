@@ -50,8 +50,7 @@
     <modules>
         <module>checkstyle</module>
         <module>infra-pom</module>
-        <module>payara-pom</module>
-        <module>glassfish-pom</module>
+        <module>server-pom</module>
     </modules>
 
     <dependencyManagement>
