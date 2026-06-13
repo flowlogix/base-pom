@@ -25,7 +25,6 @@
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
         <testcontainers.skip>true</testcontainers.skip>
-        <skipITs>true</skipITs>
         <server.start.disable>${skipITs}</server.start.disable>
         <server.start.skip>${server.start.disable}</server.start.skip>
         <server.imageName/>
@@ -33,7 +32,8 @@
         <server.asadmin.executable>${root.basedir}/target/dependency/${server.dir}/bin/asadmin${server.asadmin.executable.suffix}</server.asadmin.executable>
         <server.http.port>8080</server.http.port>
         <server.https.port>8181</server.https.port>
-        <server.archillian.container>server-docker</server.archillian.container>
+        <server.arquillian.container/>
+        <server.arquillian.container.docker/>
     </properties>
 
     <profiles>
@@ -42,6 +42,7 @@
             <properties>
                 <server.start.skip>true</server.start.skip>
                 <testcontainers.skip>true</testcontainers.skip>
+                <arquillian.container>${server.arquillian.container}</arquillian.container>
             </properties>
         </profile>
         <profile>
@@ -49,7 +50,7 @@
             <properties>
                 <server.start.skip>true</server.start.skip>
                 <testcontainers.skip>true</testcontainers.skip>
-                <arquillian.container>${server.archillian.container}</arquillian.container>
+                <arquillian.container>${server.arquillian.container.docker}</arquillian.container>
                 <server.https.port>443</server.https.port>
             </properties>
             <build>
@@ -69,8 +70,8 @@
             <id>server-docker</id>
             <properties>
                 <server.start.skip>true</server.start.skip>
-                <arquillian.container>${server.archillian.container}</arquillian.container>
                 <testcontainers.skip>false</testcontainers.skip>
+                <arquillian.container>${server.arquillian.container.docker}</arquillian.container>
             </properties>
         </profile>
 
@@ -104,6 +105,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    
     <build>
         <plugins>
             <plugin>

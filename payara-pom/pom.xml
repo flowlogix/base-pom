@@ -25,6 +25,8 @@
         <server.groupId>fish.payara.distributions</server.groupId>
         <server.artifactId>payara</server.artifactId>
         <server.version>${payara.version}</server.version>
+        <server.arquillian.container>payara</server.arquillian.container>
+        <server.arquillian.container.docker>payara-docker</server.arquillian.container.docker>
     </properties>
 
     <dependencies>
