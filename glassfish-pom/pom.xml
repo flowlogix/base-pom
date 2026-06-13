@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
-    <artifactId>payara-pom</artifactId>
+    <artifactId>glassfish-pom</artifactId>
     <version>x-SNAPSHOT</version>
 
     <parent>
@@ -15,25 +15,26 @@
         <relativePath>../server-common</relativePath>
     </parent>
 
-    <name>Payara configuration POM</name>
-    <description>Opinionated Payara configuration to be used as parent POM</description>
+    <name>GlassFish configuration POM</name>
+    <description>Opinionated Eclipse GlassFish configuration to be used as parent POM</description>
 
     <properties>
-        <payara.version>7.2026.5</payara.version>
-        <arquillian.payara.version>3.1</arquillian.payara.version>
-        <server.dir>payara7</server.dir>
-        <server.groupId>fish.payara.distributions</server.groupId>
-        <server.artifactId>payara</server.artifactId>
-        <server.version>${payara.version}</server.version>
-        <server.arquillian.container>payara</server.arquillian.container>
-        <server.arquillian.container.docker>payara-docker</server.arquillian.container.docker>
+        <glassfish.version>8.0.3</glassfish.version>
+        <arquillian.glassfish.version>2.2.0</arquillian.glassfish.version>
+        <server.dir>glassfish8</server.dir>
+        <server.groupId>org.glassfish.main.distributions</server.groupId>
+        <server.artifactId>glassfish</server.artifactId>
+        <server.version>${glassfish.version}</server.version>
+        <server.imageName>ghcr.io/eclipse-ee4j/glassfish</server.imageName>
+        <server.arquillian.container>glassfish</server.arquillian.container>
+        <server.arquillian.container.docker>glassfish-docker</server.arquillian.container.docker>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>fish.payara.arquillian</groupId>
-            <artifactId>arquillian-payara-server-remote</artifactId>
-            <version>${arquillian.payara.version}</version>
+            <groupId>ee.omnifish.arquillian</groupId>
+            <artifactId>arquillian-glassfish-server-remote</artifactId>
+            <version>${arquillian.glassfish.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -55,9 +56,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>fish.payara.extras</groupId>
-                <artifactId>payara-micro</artifactId>
-                <version>${payara.version}</version>
+                <groupId>org.glassfish.main.extras</groupId>
+                <artifactId>glassfish-embedded-all</artifactId>
+                <version>${glassfish.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
