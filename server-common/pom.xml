@@ -28,6 +28,10 @@
         <server.start.disable>${skipITs}</server.start.disable>
         <server.start.skip>${server.start.disable}</server.start.skip>
         <server.imageName/>
+        <server.dir/>
+        <server.groupId/>
+        <server.artifactId/>
+        <server.version/>
         <server.asadmin.executable.suffix/>
         <server.asadmin.executable>${root.basedir}/target/dependency/${server.dir}/bin/asadmin${server.asadmin.executable.suffix}</server.asadmin.executable>
         <server.http.port>8080</server.http.port>
