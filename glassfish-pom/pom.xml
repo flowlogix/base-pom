@@ -20,7 +20,7 @@
 
     <properties>
         <glassfish.version>8.0.3</glassfish.version>
-        <arquillian.glassfish.version>2.2.0</arquillian.glassfish.version>
+        <arquillian.glassfish.version>2.2.1</arquillian.glassfish.version>
         <server.dir>glassfish8</server.dir>
         <server.groupId>org.glassfish.main.distributions</server.groupId>
         <server.artifactId>glassfish</server.artifactId>
