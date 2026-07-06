@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
     <artifactId>server-common</artifactId>
-    <version>x-SNAPSHOT</version>
+    <version>130</version>
 
     <parent>
         <groupId>com.flowlogix</groupId>
         <artifactId>infra-pom</artifactId>
-        <version>x-SNAPSHOT</version>
+        <version>130</version>
         <relativePath>../infra-pom</relativePath>
     </parent>
 
@@ -27,17 +25,17 @@
         <testcontainers.skip>true</testcontainers.skip>
         <server.start.disable>${skipITs}</server.start.disable>
         <server.start.skip>${server.start.disable}</server.start.skip>
-        <server.imageName/>
-        <server.dir/>
+        <server.imageName />
+        <server.dir />
         <server.groupId>com.example</server.groupId>
         <server.artifactId>example</server.artifactId>
         <server.version>999</server.version>
-        <server.asadmin.executable.suffix/>
+        <server.asadmin.executable.suffix />
         <server.asadmin.executable>${root.basedir}/target/dependency/${server.dir}/bin/asadmin${server.asadmin.executable.suffix}</server.asadmin.executable>
         <server.http.port>8080</server.http.port>
         <server.https.port>8181</server.https.port>
-        <server.arquillian.container/>
-        <server.arquillian.container.docker/>
+        <server.arquillian.container />
+        <server.arquillian.container.docker />
     </properties>
 
     <profiles>
