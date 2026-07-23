@@ -19,7 +19,7 @@
     <description>Opinionated Payara configuration to be used as parent POM</description>
 
     <properties>
-        <payara.version>7.2026.6</payara.version>
+        <payara.version>7.2026.7</payara.version>
         <arquillian.payara.version>3.1</arquillian.payara.version>
         <server.dir>payara7</server.dir>
         <server.groupId>fish.payara.distributions</server.groupId>
