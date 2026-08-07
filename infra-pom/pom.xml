@@ -48,6 +48,7 @@
         <compiler.annotation.processing/>
         <junit5.parallel.tests.enabled>true</junit5.parallel.tests.enabled>
         <junit5.parallel.tests.mode>concurrent</junit5.parallel.tests.mode>
+        <junit5.parallel.tests.executor.service>WORKER_THREAD_POOL</junit5.parallel.tests.executor.service>
         <test.parallel>classes</test.parallel>
         <it.test.parallel>${test.parallel}</it.test.parallel>
         <shrinkwrap.compile.skip>true</shrinkwrap.compile.skip>
@@ -374,6 +375,7 @@
                             <configurationParameters>
                                 junit.jupiter.execution.parallel.enabled = ${junit5.parallel.tests.enabled}
                                 junit.jupiter.execution.parallel.mode.default = ${junit5.parallel.tests.mode}
+                                junit.jupiter.execution.parallel.config.executor-service = ${junit5.parallel.tests.executor.service}
                             </configurationParameters>
                         </properties>
                     </configuration>
