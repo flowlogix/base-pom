@@ -19,7 +19,7 @@
     <description>Opinionated Eclipse GlassFish configuration to be used as parent POM</description>
 
     <properties>
-        <glassfish.version>8.0.3</glassfish.version>
+        <glassfish.version>8.0.4</glassfish.version>
         <arquillian.glassfish.version>2.2.1</arquillian.glassfish.version>
         <server.dir>glassfish8</server.dir>
         <server.groupId>org.glassfish.main.distributions</server.groupId>
