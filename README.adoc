@@ -76,3 +76,5 @@ A: Yes, you can use this POM as a parent POM for your project's parent POM. Then
 
 Q: How often is this updated? +
 A: This POM is updated regularly to keep up with the latest versions of the dependencies and plugins. On average, it is updated weekly.
+
+image:https://static.scarf.sh/a.png?x-pxid=d8c39487-b1ab-48e5-88c6-8e4b3b6b41ae&page=README-base-pom.adoc[,0,0]
