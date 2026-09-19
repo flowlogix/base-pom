@@ -83,7 +83,6 @@
         <shrinkwrap.api.version>1.2.6</shrinkwrap.api.version>
         <shrinkwrap.resolver.version>3.3.7</shrinkwrap.resolver.version>
         <mockito.version>5.23.0</mockito.version>
-        <flowlogix.bom.version>47</flowlogix.bom.version>
     </properties>
 
     <distributionManagement>
@@ -670,7 +669,7 @@
                     <dependency>
                         <groupId>com.flowlogix</groupId>
                         <artifactId>flowlogix-bom</artifactId>
-                        <version>${flowlogix.bom.version}</version>
+                        <version>47</version>
                         <scope>import</scope>
                         <type>pom</type>
                     </dependency>
