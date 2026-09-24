@@ -27,6 +27,7 @@
         <snippet.path>${snippet.path.p1}:${snippet.path.p2}:${snippet.path.p3}</snippet.path>
         <release.profile>flowlogix-central-portal</release.profile>
         <release.profiles>${release.profile}</release.profiles>
+        <release.tagNameFormat>Version-@{project.version}</release.tagNameFormat>
         <gpg.keyname>Flow Logix, Inc.</gpg.keyname>
         <staging.server>flowlogix-maven-central-portal</staging.server>
         <nexus.url>https://central.sonatype.com</nexus.url>
@@ -481,7 +482,7 @@
                         <preparationGoals>validate</preparationGoals>
                         <preparationProfiles>skip-checkstyle</preparationProfiles>
                         <releaseProfiles>${release.profiles},docs,release-plugins</releaseProfiles>
-                        <tagNameFormat>Version-@{project.version}</tagNameFormat>
+                        <tagNameFormat>${release.tagNameFormat}</tagNameFormat>
                     </configuration>
                 </plugin>
                 <plugin>
