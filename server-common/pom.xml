@@ -20,7 +20,7 @@
 
     <properties>
         <eclipselink.version>5.0.2</eclipselink.version>
-        <container.deploy.plugin.version>1.5</container.deploy.plugin.version>
+        <container.deploy.plugin.version>1.5.1</container.deploy.plugin.version>
         <root.basedir>${maven.multiModuleProjectDirectory}</root.basedir>
         <dependencies.output-directory>${root.basedir}/target/dependency</dependencies.output-directory>
         <dependencies.markers-directory>${root.basedir}/target/dependency-maven-plugin-markers</dependencies.markers-directory>
