@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      checks: read
     steps:
       - name: Approve PR
         uses: hmarr/auto-approve-action@f0939ea97e9205ef24d872e76833fa908a770363 # v4.0.0
@@ -28,9 +29,13 @@ jobs:
 
       - name: Merge PR
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        env:
+          CHECKS_TOKEN: ${{ github.token }}
         with:
           github-token: ${{ secrets.github-token }}
           script: |
+            // Fine-grained PATs cannot read check runs, use GITHUB_TOKEN for that
+            const checksClient = getOctokit(process.env.CHECKS_TOKEN);
             const pr = context.payload.pull_request;
             const { owner, repo } = context.repo;
             const ref = pr.head.sha;
@@ -38,7 +43,7 @@ jobs:
 
             let tries = 0, maxTries = 40;
             while (tries < maxTries) {
-              const checks = await github.rest.checks.listForRef({ owner, repo, ref });
+              const checks = await checksClient.rest.checks.listForRef({ owner, repo, ref });
               const pendingChecksOnly = checks.data.check_runs.filter(
                 c => !c.name.endsWith('automerge') && c.status !== 'completed'
               );
