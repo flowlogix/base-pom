@@ -63,8 +63,10 @@
         <jar.skip-if-empty>true</jar.skip-if-empty>
         <japicmp.skip>true</japicmp.skip>
         <javadoc.doclint>all,-reference</javadoc.doclint>
-        <javadoc.sourcepath>${project.build.sourceDirectory}
-            :${project.build.directory}/generated-sources/annotations</javadoc.sourcepath>
+        <javadoc.annotations.sourcepath>${project.build.directory}/generated-sources/annotations</javadoc.annotations.sourcepath>
+        <javadoc.sourcepath>${project.build.sourceDirectory}:${javadoc.annotations.sourcepath}</javadoc.sourcepath>
+        <javadoc.delombok.sourcepath>${project.build.directory}/generated-sources/delombok
+            :${javadoc.annotations.sourcepath}</javadoc.delombok.sourcepath>
         <javadoc.snippet.path>${snippet.path}</javadoc.snippet.path>
         <javadoc.snippet.path.options>--snippet-path ${javadoc.snippet.path}</javadoc.snippet.path.options>
         <checkstyle.configLocation>checkstyle.xml</checkstyle.configLocation>
@@ -316,6 +318,10 @@
                         <version>x-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>com.github.siom79.japicmp</groupId>
