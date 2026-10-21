@@ -78,7 +78,7 @@
         <ear.skipClassPathModification>true</ear.skipClassPathModification>
 
         <jdk.minimum.version>${maven.compiler.release}</jdk.minimum.version>
-        <maven.minimum.version>3.8</maven.minimum.version>
+        <maven.minimum.version>3.9.3</maven.minimum.version>
         <jakarta.ee10.version>10.0.0</jakarta.ee10.version>
         <jakarta.ee.version>11.0.0</jakarta.ee.version>
         <lombok.version>1.18.48</lombok.version>
