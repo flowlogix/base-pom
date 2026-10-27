@@ -350,7 +350,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.15</version>
+                    <version>0.8.16</version>
                     <configuration>
                         <address>${jacocoAddress}</address>
                         <port>${jacocoPort}</port>
@@ -676,7 +676,7 @@
                     <dependency>
                         <groupId>com.flowlogix</groupId>
                         <artifactId>flowlogix-bom</artifactId>
-                        <version>53</version>
+                        <version>54</version>
                         <scope>import</scope>
                         <type>pom</type>
                     </dependency>
