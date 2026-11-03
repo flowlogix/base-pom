@@ -676,7 +676,7 @@
                     <dependency>
                         <groupId>com.flowlogix</groupId>
                         <artifactId>flowlogix-bom</artifactId>
-                        <version>54</version>
+                        <version>55</version>
                         <scope>import</scope>
                         <type>pom</type>
                     </dependency>
