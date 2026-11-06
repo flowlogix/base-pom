@@ -665,25 +665,6 @@
             </build>
         </profile>
         <profile>
-            <id>include-flowlogix-bom</id>
-            <activation>
-                <property>
-                    <name>!flowlogix.bom.skip</name>
-                </property>
-            </activation>
-            <dependencyManagement>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.flowlogix</groupId>
-                        <artifactId>flowlogix-bom</artifactId>
-                        <version>55</version>
-                        <scope>import</scope>
-                        <type>pom</type>
-                    </dependency>
-                </dependencies>
-            </dependencyManagement>
-        </profile>
-        <profile>
             <id>skinny-war</id>
             <activation>
                 <property>
