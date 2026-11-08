@@ -11,13 +11,13 @@ Please see https://docs.flowlogix.com/base-pom[documentation] or use the https:/
 [source,shell]
 .Single-line starter - generate a JAR sample via curl
 ----
-curl -sSL https://start.flowlogix.com/download -o starter.zip
+curl -sSL https://start.flowlogix.com/generate -o starter.zip
 ----
 
 [source,shell]
 .Single-line starter - generate a WAR sample via curl
 ----
-curl -sSL "https://start.flowlogix.com/download/;packagingType=war" -o starter.zip
+curl -sSL "https://start.flowlogix.com/generate/;packagingType=war" -o starter.zip
 ----
 
 [source,xml]
