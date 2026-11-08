@@ -21,6 +21,7 @@
     <properties>
         <payara.version>7.2026.10</payara.version>
         <arquillian.payara.version>3.1</arquillian.payara.version>
+        <server.jdk.range>[17,26)</server.jdk.range>
         <server.dir>payara7</server.dir>
         <server.groupId>fish.payara.distributions</server.groupId>
         <server.artifactId>payara</server.artifactId>

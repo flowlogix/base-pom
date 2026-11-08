@@ -27,6 +27,8 @@
         <testcontainers.skip>true</testcontainers.skip>
         <server.start.disable>${skipITs}</server.start.disable>
         <server.start.skip>${server.start.disable}</server.start.skip>
+        <!-- Maven version range of supported JDKs for running the server, set by child POMs -->
+        <server.jdk.range>[17,)</server.jdk.range>
         <server.imageName/>
         <server.dir/>
         <server.groupId>com.example</server.groupId>
@@ -116,6 +118,27 @@
                 <groupId>com.flowlogix.plugins</groupId>
                 <artifactId>container-deploy-plugin</artifactId>
                 <version>${container.deploy.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-server-jdk</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${server.start.skip}</skip>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>${server.jdk.range}</version>
+                                    <message>Server requires JDK in range ${server.jdk.range}, use local or docker profile</message>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
