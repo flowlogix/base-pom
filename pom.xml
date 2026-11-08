@@ -53,6 +53,7 @@
         <module>server-common</module>
         <module>payara-pom</module>
         <module>glassfish-pom</module>
+        <module>quarkus-pom</module>
     </modules>
 
     <dependencyManagement>
