@@ -43,7 +43,7 @@
             <plugin>
                 <groupId>io.quarkus.platform</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
-                <version>3.40.1.2</version>
+                <version>4.0.1</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>
