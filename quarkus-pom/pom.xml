@@ -25,7 +25,7 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <!-- Quarkus brings its own (newer) CDI API (jakarta.cdi package) -->
+                    <!-- CDI API is moved to jakarta.cdi package -->
                     <groupId>jakarta.enterprise</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
