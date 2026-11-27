@@ -23,6 +23,13 @@
             <artifactId>jakarta.jakartaee-web-api</artifactId>
             <version>${jakarta.ee.version}</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <!-- Quarkus brings its own (newer) CDI API (jakarta.cdi package) -->
+                    <groupId>jakarta.enterprise</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
