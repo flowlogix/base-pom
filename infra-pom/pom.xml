@@ -73,9 +73,21 @@
         <checkstyle.headerLocation>flowlogix-header.txt</checkstyle.headerLocation>
         <checkstyle.suppressionsLocation/>
         <checkstyle.excludes>**/module-info.java</checkstyle.excludes>
+        <checkstyle.consoleOutput>true</checkstyle.consoleOutput>
         <ear.defaultLibBundleDir>lib</ear.defaultLibBundleDir>
         <ear.skinnyWars>true</ear.skinnyWars>
         <ear.skipClassPathModification>true</ear.skipClassPathModification>
+
+        <!-- Standard plugin properties, aliased to the above for backwards compatibility -->
+        <maven.test.redirectTestOutputToFile>${test.redirect.to.file}</maven.test.redirectTestOutputToFile>
+        <maven.compiler.showWarnings>${compiler.show.warnings}</maven.compiler.showWarnings>
+        <maven.compiler.proc>${compiler.annotation.processing}</maven.compiler.proc>
+        <jacoco.address>${jacocoAddress}</jacoco.address>
+        <jacoco.port>${jacocoPort}</jacoco.port>
+        <jacoco.reset>${jacocoReset}</jacoco.reset>
+        <checkstyle.config.location>${checkstyle.configLocation}</checkstyle.config.location>
+        <checkstyle.header.file>${checkstyle.headerLocation}</checkstyle.header.file>
+        <checkstyle.suppressions.location>${checkstyle.suppressionsLocation}</checkstyle.suppressions.location>
 
         <jdk.minimum.version>${maven.compiler.release}</jdk.minimum.version>
         <maven.minimum.version>3.9.3</maven.minimum.version>
@@ -280,6 +292,21 @@
                             <goal>add-source</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <!-- Removes the Mockito agent options if Mockito is not a dependency -->
+                        <id>resolve-mockito-agent</id>
+                        <configuration>
+                            <name>mockito.agent</name>
+                            <value>_${mockito.agentOptions}</value>
+                            <regex>^_(.*[$][{].*)?</regex>
+                            <replacement/>
+                            <failIfNoMatch>false</failIfNoMatch>
+                        </configuration>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>regex-property</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -287,16 +314,10 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.6.0</version>
                 <configuration>
-                    <configLocation>${checkstyle.configLocation}</configLocation>
-                    <headerLocation>${checkstyle.headerLocation}</headerLocation>
-                    <suppressionsLocation>${checkstyle.suppressionsLocation}</suppressionsLocation>
                     <linkXRef>true</linkXRef>
-                    <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
-                    <failOnViolation>true</failOnViolation>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     <enableRulesSummary>true</enableRulesSummary>
-                    <excludes>${checkstyle.excludes}</excludes>
                 </configuration>
                 <executions>
                     <execution>
@@ -352,22 +373,17 @@
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>0.8.16</version>
                     <configuration>
-                        <address>${jacocoAddress}</address>
-                        <port>${jacocoPort}</port>
-                        <reset>${jacocoReset}</reset>
                         <propertyName>jacocoAgent</propertyName>
                     </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
-                        <showWarnings>${compiler.show.warnings}</showWarnings>
                         <compilerArgs combine.children="append">
                             <arg>${compiler.deprecation.arg}</arg>
                             <arg>${compiler.unchecked.arg}</arg>
                             <arg>${compiler.parameters.arg}</arg>
                         </compilerArgs>
-                        <proc>${compiler.annotation.processing}</proc>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -376,8 +392,7 @@
                         <parallel>${test.parallel}</parallel>
                         <threadCount>${test.thread.count}</threadCount>
                         <runOrder>${test.run.order}</runOrder>
-                        <redirectTestOutputToFile>${test.redirect.to.file}</redirectTestOutputToFile>
-                        <argLine>@{argLine} @{jacocoAgent} @{jdk11SurefireOptions} ${mockito.agentOptions}</argLine>
+                        <argLine>@{argLine} @{jacocoAgent} @{jdk11SurefireOptions} @{mockito.agent}</argLine>
                         <properties>
                             <configurationParameters>
                                 junit.jupiter.execution.parallel.enabled = ${junit5.parallel.tests.enabled}
@@ -402,8 +417,7 @@
                         <parallel>${it.test.parallel}</parallel>
                         <threadCount>${test.thread.count}</threadCount>
                         <runOrder>${test.run.order}</runOrder>
-                        <redirectTestOutputToFile>${test.redirect.to.file}</redirectTestOutputToFile>
-                        <argLine>@{argLine} @{jacocoAgent} @{jdk11FailsafeOptions} ${mockito.agentOptions}</argLine>
+                        <argLine>@{argLine} @{jacocoAgent} @{jdk11FailsafeOptions} @{mockito.agent}</argLine>
                         <systemPropertyVariables combine.children="append">
                             <arquillian.launch>${arquillian.container}</arquillian.launch>
                             <webdriver.browser>${drone.browser}</webdriver.browser>
